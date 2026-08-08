@@ -55,6 +55,70 @@ const projects: Project[] = [
     ],
   },
   {
+    id: "todo-list",
+    title: "Project-1 — Todo List",
+    category: "UTILITY APPLICATION",
+    featured: false,
+    githubUrl: "https://github.com/ThakurAmit07/Project-1",
+    description: "Interactive task management app with task prioritization, state persistence, and clean UI filtering.",
+    tags: ["JavaScript", "DOM Logic", "CSS3"],
+    theme: {
+      border: "border-[#FF5500]/50 hover:border-[#FF5500]",
+      glow: "hover:shadow-[0_15px_45px_rgba(255,85,0,0.35)]",
+      badgeBg: "bg-[#FF5500]/20 border-[#FF5500]/40",
+      badgeText: "text-[#FF8844]",
+      accentGradient: "from-[#FF5500] to-[#7F5CFF]",
+    },
+  },
+  {
+    id: "expense-tracker",
+    title: "Project-2 — Expense Tracker",
+    category: "UTILITY APPLICATION",
+    featured: false,
+    githubUrl: "https://github.com/ThakurAmit07/Project-2",
+    description: "Personal finance and daily expense tracking tool with real-time category aggregation and budget summaries.",
+    tags: ["JavaScript", "HTML5", "CSS3", "Local Storage"],
+    theme: {
+      border: "border-emerald-500/50 hover:border-emerald-400",
+      glow: "hover:shadow-[0_15px_45px_rgba(16,185,129,0.35)]",
+      badgeBg: "bg-emerald-500/20 border-emerald-500/40",
+      badgeText: "text-emerald-300",
+      accentGradient: "from-emerald-400 to-[#4CE0FF]",
+    },
+  },
+  {
+    id: "password-generator",
+    title: "Project-3 — Password Generator & Security Quiz",
+    category: "SECURITY TOOL & QUIZ",
+    featured: false,
+    githubUrl: "https://github.com/ThakurAmit07/Project-3",
+    description: "Cryptographically customizable password generator and security logic tool with instant clipboard copy and dynamic question review.",
+    tags: ["JavaScript", "Security", "CSS3", "DOM Logic"],
+    theme: {
+      border: "border-purple-500/50 hover:border-purple-400",
+      glow: "hover:shadow-[0_15px_45px_rgba(168,85,247,0.35)]",
+      badgeBg: "bg-purple-500/20 border-purple-500/40",
+      badgeText: "text-purple-300",
+      accentGradient: "from-purple-400 to-[#7F5CFF]",
+    },
+  },
+  {
+    id: "space-portfolio",
+    title: "Project-4 — Space Portfolio Web App",
+    category: "WEB DEVELOPMENT • GITHUB REPO",
+    featured: false,
+    githubUrl: "https://github.com/ThakurAmit07/portfolio2",
+    description: "Interactive 3D volcanic space themed developer portfolio built with Next.js 16, React Three Fiber, Framer Motion, and Tailwind CSS.",
+    tags: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Three.js"],
+    theme: {
+      border: "border-[#4CE0FF]/50 hover:border-[#4CE0FF]",
+      glow: "hover:shadow-[0_15px_45px_rgba(76,224,255,0.35)]",
+      badgeBg: "bg-[#4CE0FF]/20 border-[#4CE0FF]/40",
+      badgeText: "text-[#4CE0FF]",
+      accentGradient: "from-[#4CE0FF] to-[#7F5CFF]",
+    },
+  },
+  {
     id: "eduleap",
     title: "EduLeap Educational Platform",
     category: "FULL-STACK WEB APP",
@@ -84,7 +148,7 @@ const projects: Project[] = [
     category: "ARTIFICIAL INTELLIGENCE & ML",
     featured: false,
     date: "2026",
-    githubUrl: "https://github.com/ThakurAmit07",
+    githubUrl: "https://github.com/ThakurAmit07/AIML_BOOTCAMP2026",
     description:
       "Comprehensive Machine Learning & AI project repository containing data pipeline implementations, model training workflows, and predictive analytics scripts.",
     tags: ["Python", "Machine Learning", "Scikit-Learn", "Pandas", "NumPy"],
@@ -100,70 +164,6 @@ const projects: Project[] = [
       "Exploratory Data Analysis (EDA) pipelines",
       "Model optimization & evaluation metrics",
     ],
-  },
-  {
-    id: "project-07",
-    title: "Project_07 — Web Application",
-    category: "WEB DEVELOPMENT",
-    featured: false,
-    githubUrl: "https://github.com/ThakurAmit07",
-    description: "Custom web development repository demonstrating modular frontend architecture and modern layout techniques.",
-    tags: ["JavaScript", "HTML5", "CSS3", "Git"],
-    theme: {
-      border: "border-[#4CE0FF]/50 hover:border-[#4CE0FF]",
-      glow: "hover:shadow-[0_15px_45px_rgba(76,224,255,0.35)]",
-      badgeBg: "bg-[#4CE0FF]/20 border-[#4CE0FF]/40",
-      badgeText: "text-[#4CE0FF]",
-      accentGradient: "from-[#4CE0FF] to-[#7F5CFF]",
-    },
-  },
-  {
-    id: "expense-tracker",
-    title: "Project-2 — Expense Tracker",
-    category: "UTILITY APPLICATION",
-    featured: false,
-    githubUrl: "https://github.com/ThakurAmit07",
-    description: "Personal finance and daily expense tracking tool with real-time category aggregation and budget summaries.",
-    tags: ["JavaScript", "HTML5", "CSS3", "Local Storage"],
-    theme: {
-      border: "border-emerald-500/50 hover:border-emerald-400",
-      glow: "hover:shadow-[0_15px_45px_rgba(16,185,129,0.35)]",
-      badgeBg: "bg-emerald-500/20 border-emerald-500/40",
-      badgeText: "text-emerald-300",
-      accentGradient: "from-emerald-400 to-[#4CE0FF]",
-    },
-  },
-  {
-    id: "todo-list",
-    title: "Project-1 — Todo List",
-    category: "UTILITY APPLICATION",
-    featured: false,
-    githubUrl: "https://github.com/ThakurAmit07",
-    description: "Interactive task management app with task prioritization, state persistence, and clean UI filtering.",
-    tags: ["JavaScript", "DOM Logic", "CSS3"],
-    theme: {
-      border: "border-amber-500/50 hover:border-amber-400",
-      glow: "hover:shadow-[0_15px_45px_rgba(245,158,11,0.35)]",
-      badgeBg: "bg-amber-500/20 border-amber-500/40",
-      badgeText: "text-amber-300",
-      accentGradient: "from-amber-400 to-[#FF5500]",
-    },
-  },
-  {
-    id: "password-generator",
-    title: "Project-3 — Password Generator & Security Quiz",
-    category: "SECURITY TOOL & QUIZ",
-    featured: false,
-    githubUrl: "https://github.com/ThakurAmit07",
-    description: "Cryptographically customizable password generator and security logic tool with instant clipboard copy and dynamic question review.",
-    tags: ["JavaScript", "Security", "CSS3", "DOM Logic"],
-    theme: {
-      border: "border-purple-500/50 hover:border-purple-400",
-      glow: "hover:shadow-[0_15px_45px_rgba(168,85,247,0.35)]",
-      badgeBg: "bg-purple-500/20 border-purple-500/40",
-      badgeText: "text-purple-300",
-      accentGradient: "from-purple-400 to-[#7F5CFF]",
-    },
   },
 ];
 
@@ -323,7 +323,7 @@ export default function ProjectsSection() {
           </div>
         </motion.div>
 
-        {/* HIGH-ANIMATION SECONDARY PROJECTS GRID (PHOTO 3 FIX) */}
+        {/* SEQUENTIALLY ORDERED SECONDARY PROJECTS GRID (Project-1, Project-2, Project-3, Project-4, EduLeap, AIML_BOOTCAMP) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {secondaryProjects.map((project, idx) => (
             <motion.div
