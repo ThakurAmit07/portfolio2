@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Flame, Rocket, FileText } from "lucide-react";
+import { Flame, Rocket, Download } from "lucide-react";
 import Hero3DCanvas from "../canvas/Hero3DCanvas";
 import { GithubIcon, LinkedInIcon, XIcon } from "../ui/SocialIcons";
 
@@ -90,13 +90,16 @@ export default function HeroSection({ onOpenResumeModal }: HeroSectionProps) {
               <span>Explore Projects</span>
             </a>
 
-            <button
+            {/* DOWNLOAD RESUME BUTTON (IMAGE 1 FIX) */}
+            <motion.button
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.96 }}
               onClick={onOpenResumeModal}
-              className="flex items-center gap-2 px-7 py-4 rounded-full bg-[#12121C] border border-[#7F5CFF]/40 text-[#F5F5FA] font-semibold text-base hover:border-[#FF5500] hover:bg-[#FF5500]/10 active:scale-95 transition-all duration-300 cursor-pointer"
+              className="flex items-center gap-2.5 px-7 py-4 rounded-full bg-[#12121C] border border-[#7F5CFF]/60 text-[#F5F5FA] font-extrabold text-base hover:border-[#FF5500] hover:bg-[#FF5500]/15 shadow-lg shadow-[#7F5CFF]/20 hover:shadow-[#FF5500]/30 transition-all duration-300 cursor-pointer"
             >
-              <FileText className="w-5 h-5 text-[#4CE0FF]" />
-              <span>Resume</span>
-            </button>
+              <Download className="w-5 h-5 text-[#4CE0FF]" />
+              <span>Download Resume</span>
+            </motion.button>
 
             {/* Social Icons */}
             <div className="flex items-center gap-3 pl-3 border-l border-[#7F5CFF]/30">
