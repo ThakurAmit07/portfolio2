@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Download, FileText, CheckCircle2, GraduationCap, Award, Briefcase } from "lucide-react";
+import { X, Download, CheckCircle2, GraduationCap, Award, Briefcase } from "lucide-react";
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -96,29 +96,32 @@ CERTIFICATIONS
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             className="relative w-full max-w-3xl glass-panel-featured rounded-3xl p-6 sm:p-8 border border-[#7F5CFF]/40 shadow-2xl z-10 overflow-hidden my-8 max-h-[85vh] flex flex-col"
           >
+            {/* Header: Download Resume */}
             <div className="flex items-center justify-between pb-4 border-b border-white/10 shrink-0">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-[#7F5CFF]/20 border border-[#7F5CFF]/30 flex items-center justify-center text-[#7F5CFF]">
-                  <FileText className="w-5 h-5" />
+                  <Download className="w-5 h-5 text-[#4CE0FF]" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold font-display text-white">
-                    Amit Singh — Official Resume
+                  <h3 className="text-xl font-extrabold font-display text-white">
+                    Download Resume
                   </h3>
-                  <p className="text-xs text-[#4CE0FF] font-mono">
-                    Software Developer • AI & ML
+                  <p className="text-xs text-[#4CE0FF] font-mono font-bold">
+                    Amit Singh • Software Developer & AI/ML
                   </p>
                 </div>
               </div>
 
               <div className="flex items-center gap-2">
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.97 }}
                   onClick={handleDownload}
-                  className="px-4 py-2 text-xs font-extrabold text-white bg-gradient-to-r from-[#FF5500] to-[#7F5CFF] hover:from-[#E64D00] hover:to-[#6A47EB] rounded-full flex items-center gap-1.5 shadow-lg transition-all"
+                  className="px-4.5 py-2 text-xs sm:text-sm font-extrabold text-white bg-gradient-to-r from-[#FF5500] to-[#7F5CFF] hover:from-[#E64D00] hover:to-[#6A47EB] rounded-full flex items-center gap-2 shadow-lg transition-all"
                 >
-                  <Download className="w-4 h-4" />
+                  <Download className="w-4 h-4 text-white" />
                   <span>Download Resume</span>
-                </button>
+                </motion.button>
 
                 <button
                   onClick={onClose}
@@ -231,7 +234,7 @@ CERTIFICATIONS
 
             <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between shrink-0">
               <span className="text-[11px] font-mono text-zinc-500">
-                Official Document — Amit Singh
+                Official Resume Document — Amit Singh
               </span>
 
               <button
