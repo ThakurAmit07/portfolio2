@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Award, ShieldCheck, CheckCircle2, ExternalLink, X, Sparkles, Check, FileCheck, Cloud } from "lucide-react";
+import { Award, ShieldCheck, CheckCircle2, ExternalLink, X, Sparkles, Check, FileCheck, Cloud, Cpu } from "lucide-react";
 
 interface Certification {
   id: string;
@@ -31,21 +31,42 @@ const certs: Certification[] = [
     id: "azure-fundamentals",
     title: "Microsoft Certified: Azure Fundamentals",
     issuer: "Microsoft",
-    date: "May 2026",
-    credentialId: "AZ900-MS-849201-AS",
+    date: "May 20, 2026",
+    credentialId: "cb71dfdb-8336-4d1d-aab0-a24949e2ea2d",
     featured: true,
-    verifyUrl: "https://www.credly.com/org/microsoft/badges",
-    verifyLabel: "Verify on Credly / Microsoft Credential Badge ↗",
-    verificationPlatform: "Credly / Microsoft Official Portal",
-    description: "Official Cloud Architecture & Azure Core Infrastructure certification covering cloud concepts, security, governance, identity management, and Azure service architectures.",
-    skills: ["Cloud Architecture", "Azure Core Services", "Security & Governance", "Cloud Pricing", "Virtual Networks", "Resource Manager"],
+    verifyUrl: "https://www.credly.com/badges/cb71dfdb-8336-4d1d-aab0-a24949e2ea2d",
+    verifyLabel: "Verify Badge Details Page on Credly ↗",
+    verificationPlatform: "Credly Authenticated Badge",
+    description: "Earners of the Azure Fundamentals certification have demonstrated foundational level knowledge of cloud services and how those services are provided with Microsoft Azure.",
+    skills: ["Cloud Concepts", "Azure Services", "Azure Workloads", "Security & Privacy", "Azure Pricing & Support"],
     theme: {
       border: "border-[#4CE0FF]/70 hover:border-[#4CE0FF]",
-      glow: "shadow-[0_0_60px_rgba(76,224,255,0.3)] hover:shadow-[0_20px_65px_rgba(76,224,255,0.45)]",
-      badgeBg: "bg-[#4CE0FF]/20 border-[#4CE0FF]/60",
+      glow: "shadow-[0_0_60px_rgba(76,224,255,0.35)] hover:shadow-[0_20px_65px_rgba(76,224,255,0.5)]",
+      badgeBg: "bg-[#4CE0FF]/25 border-[#4CE0FF]/60",
       badgeText: "text-[#4CE0FF]",
       accent: "text-[#4CE0FF]",
       iconBg: "bg-[#0A0A12] border-[#4CE0FF]/60 text-[#4CE0FF]",
+    },
+  },
+  {
+    id: "ai-skills-fest",
+    title: "AI Skills Fest 2026",
+    issuer: "Microsoft",
+    date: "June 19, 2026",
+    credentialId: "MS-AISKILLS-2026-AS",
+    featured: false,
+    verifyUrl: "https://www.credly.com/org/microsoft/badges",
+    verifyLabel: "Verify on Credly Portal ↗",
+    verificationPlatform: "Credly / Microsoft Official Badge",
+    description: "Official Microsoft recognition badge for completing hands-on AI Skills Fest workshops, generative AI model deployment, and cloud AI architecture labs.",
+    skills: ["Generative AI Labs", "Azure AI Services", "Prompt Engineering", "Cloud AI Pipelines"],
+    theme: {
+      border: "border-[#7F5CFF]/60 hover:border-[#7F5CFF]",
+      glow: "hover:shadow-[0_15px_45px_rgba(127,92,255,0.35)]",
+      badgeBg: "bg-[#7F5CFF]/20 border-[#7F5CFF]/40",
+      badgeText: "text-[#B09BFF]",
+      accent: "text-[#7F5CFF]",
+      iconBg: "bg-[#0A0A12] border-[#7F5CFF]/50 text-[#7F5CFF]",
     },
   },
   {
@@ -175,14 +196,14 @@ export default function CertificationsSection() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#12121C] border border-[#7F5CFF]/40 text-[#4CE0FF] text-xs sm:text-sm font-mono mb-3 shadow-[0_0_15px_rgba(127,92,255,0.2)] font-bold">
             <Award className="w-4 h-4 text-[#FF5500]" />
-            <span className="uppercase tracking-widest">VERIFIED CREDENTIALS</span>
+            <span className="uppercase tracking-widest">CREDLY AUTHENTICATED & VERIFIED BADGES</span>
           </div>
 
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white">
             Industry & Cloud <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5500] via-[#7F5CFF] to-[#4CE0FF]">Certifications</span>
           </h2>
           <p className="text-zinc-300 text-base sm:text-lg max-w-xl mt-3 leading-relaxed font-body">
-            Microsoft Credly credentials, CodeWithHarry masterclasses, TCS iON AI badges, and competitive hackathon awards.
+            Microsoft Credly badges, CodeWithHarry masterclasses, TCS iON AI credentials, and hackathon achievements.
           </p>
         </motion.div>
 
@@ -204,14 +225,14 @@ export default function CertificationsSection() {
               <div className="flex flex-wrap items-center gap-3 mb-4">
                 <span className="text-xs sm:text-sm font-mono font-black uppercase tracking-wider px-4 py-2 rounded-full bg-[#4CE0FF]/25 text-[#4CE0FF] border border-[#4CE0FF]/70 shadow-md flex items-center gap-2">
                   <Cloud className="w-4.5 h-4.5 text-[#4CE0FF] animate-pulse" />
-                  <span>★ OFFICIAL MICROSOFT CREDLY CERTIFICATION</span>
+                  <span>★ OFFICIAL MICROSOFT CREDLY BADGE</span>
                 </span>
                 <span className="text-xs sm:text-sm font-mono text-emerald-400 font-extrabold flex items-center gap-1.5 bg-black/80 px-3.5 py-1.5 rounded-full border border-emerald-500/40">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  <span>Credly Badge Verified</span>
+                  <span>Credly Verified</span>
                 </span>
                 <span className="text-xs sm:text-sm font-mono text-zinc-300 font-extrabold">
-                  Date: {azureCert.date}
+                  Issued: 5/20/2026
                 </span>
               </div>
 
@@ -220,7 +241,7 @@ export default function CertificationsSection() {
               </h3>
 
               <p className="text-lg sm:text-xl font-extrabold text-[#4CE0FF] mt-3 font-mono">
-                Issuer: Microsoft Corporation (Credly Authenticated)
+                Issuing Organization: Microsoft (Credly Authenticated)
               </p>
 
               <p className="text-zinc-200 text-base sm:text-lg leading-relaxed mt-4 max-w-3xl font-body">
@@ -247,12 +268,17 @@ export default function CertificationsSection() {
             </div>
 
             <div className="mt-8 pt-6 border-t border-white/15 flex flex-wrap items-center justify-between gap-4">
-              <span className="text-xs sm:text-sm font-mono text-zinc-300 font-bold">
-                Credential ID: <span className="text-white font-extrabold">{azureCert.credentialId}</span>
-              </span>
+              <div className="flex flex-col gap-1">
+                <span className="text-xs sm:text-sm font-mono text-zinc-300 font-bold">
+                  Credential ID: <span className="text-white font-mono font-black">{azureCert.credentialId}</span>
+                </span>
+                <span className="text-xs font-mono text-emerald-400 font-bold">
+                  Expiration: This credential does not expire
+                </span>
+              </div>
 
               <span className="text-xs sm:text-sm font-mono font-black text-white bg-gradient-to-r from-[#FF5500] to-[#7F5CFF] px-6 py-3 rounded-full shadow-lg shadow-[#FF5500]/30 flex items-center gap-2 group-hover:scale-105 transition-transform">
-                <span>Verify Microsoft Badge on Credly ↗</span>
+                <span>See Badge Details Page on Credly ↗</span>
               </span>
             </div>
           </div>
@@ -346,10 +372,10 @@ export default function CertificationsSection() {
                 </div>
                 <div>
                   <span className="text-xs font-mono font-black text-emerald-400 uppercase tracking-widest block">
-                    VERIFIED CERTIFICATE DOCUMENT
+                    VERIFIED BADGE DETAILS
                   </span>
                   <span className="text-xs text-zinc-400 font-mono">
-                    Issuer: {activeCert.issuer} • Date: {activeCert.date}
+                    Issuing Organization: {activeCert.issuer} • Issuing Date: {activeCert.date}
                   </span>
                 </div>
               </div>
@@ -363,7 +389,7 @@ export default function CertificationsSection() {
                   <div className="flex items-center gap-3">
                     <Award className="w-8 h-8 text-[#FF5500]" />
                     <div>
-                      <h4 className="text-lg font-black text-white font-display">AUTHENTICATED CREDENTIAL</h4>
+                      <h4 className="text-lg font-black text-white font-display">AUTHENTICATED CREDENTIAL BADGE</h4>
                       <p className="text-xs font-mono text-zinc-400">Issued to: <span className="text-[#4CE0FF] font-bold">Amit Singh</span></p>
                     </div>
                   </div>
@@ -378,7 +404,7 @@ export default function CertificationsSection() {
                 </p>
 
                 <div className="pt-4 border-t border-white/10 flex flex-wrap justify-between items-center text-xs font-mono text-zinc-400 gap-2">
-                  <span>Credential ID: <span className="text-white font-bold">{activeCert.credentialId}</span></span>
+                  <span>Credential ID: <span className="text-white font-mono font-bold">{activeCert.credentialId}</span></span>
                   <span>Platform: <span className="text-[#4CE0FF] font-bold">{activeCert.verificationPlatform}</span></span>
                 </div>
               </div>
