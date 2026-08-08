@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Milestone, Code2, GraduationCap, Cpu } from "lucide-react";
+import { Milestone, Code2, GraduationCap, Cpu, Award } from "lucide-react";
 
 const milestones = [
   {
@@ -31,6 +31,24 @@ const milestones = [
     icon: GraduationCap,
     accent: "border-[#4CE0FF]/50 bg-[#12121C] text-[#4CE0FF]",
   },
+  {
+    year: "2025",
+    period: "2025",
+    title: "CBSE Class XII (Senior Secondary)",
+    category: "Academic Milestone",
+    description: "Completed Class XII Senior Secondary examination under Central Board of Secondary Education with 73.20%.",
+    icon: Award,
+    accent: "border-emerald-500/50 bg-[#12121C] text-emerald-400",
+  },
+  {
+    year: "2023",
+    period: "2023",
+    title: "CBSE Class X (High School)",
+    category: "Academic Milestone",
+    description: "Completed Class X High School examination under Central Board of Secondary Education with 84.80%.",
+    icon: Award,
+    accent: "border-amber-500/50 bg-[#12121C] text-amber-400",
+  },
 ];
 
 export default function JourneySection() {
@@ -55,7 +73,7 @@ export default function JourneySection() {
             Engineering <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5500] via-[#7F5CFF] to-[#4CE0FF]">Journey & Timeline</span>
           </h2>
           <p className="text-zinc-300 text-base sm:text-lg max-w-xl mt-3 leading-relaxed font-body">
-            Milestones tracking higher education, full-stack projects, and machine learning engineering.
+            Milestones tracking higher education, senior secondary examination, high school, full-stack projects, and machine learning engineering.
           </p>
         </motion.div>
 
@@ -86,9 +104,9 @@ export default function JourneySection() {
 
                   <div className={`ml-16 sm:ml-0 sm:w-1/2 ${isEven ? "sm:pl-12" : "sm:pr-12"}`}>
                     <motion.div
-                      whileHover={{ y: -6, scale: 1.02 }}
+                      whileHover={{ y: -8, scale: 1.03 }}
                       transition={{ duration: 0.3 }}
-                      className="glass-panel rounded-3xl p-7 sm:p-8 border border-white/15 hover:border-[#7F5CFF] transition-all duration-300 group hover:shadow-[0_12px_35px_rgba(127,92,255,0.25)] cursor-pointer"
+                      className="glass-panel rounded-3xl p-7 sm:p-8 border border-white/15 hover:border-[#7F5CFF] transition-all duration-300 group hover:shadow-[0_15px_40px_rgba(127,92,255,0.3)] cursor-pointer"
                     >
                       
                       <div className="flex items-center justify-between gap-2 mb-3">

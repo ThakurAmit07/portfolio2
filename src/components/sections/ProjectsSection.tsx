@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Sparkles, X, CheckCircle2 } from "lucide-react";
+import { ExternalLink, Sparkles, X, CheckCircle2, ArrowRight } from "lucide-react";
 import { GithubIcon } from "@/components/ui/SocialIcons";
 
 interface Project {
@@ -21,6 +21,7 @@ interface Project {
     glow: string;
     badgeBg: string;
     badgeText: string;
+    accentGradient: string;
   };
 }
 
@@ -38,9 +39,10 @@ const projects: Project[] = [
     tags: ["React.js", "Supabase", "TypeScript", "Tailwind CSS", "Recharts", "AI Assistant"],
     theme: {
       border: "border-[#FF5500]/50 hover:border-[#FF5500]",
-      glow: "hover:shadow-[0_0_50px_rgba(255,85,0,0.3)]",
+      glow: "hover:shadow-[0_0_50px_rgba(255,85,0,0.35)]",
       badgeBg: "bg-[#FF5500]/20 border-[#FF5500]/40",
       badgeText: "text-[#FF5500]",
+      accentGradient: "from-[#FF5500] to-[#7F5CFF]",
     },
     features: [
       "Supabase live synchronization",
@@ -64,9 +66,10 @@ const projects: Project[] = [
     tags: ["React.js", "Python", "Flask", "PostgreSQL", "SQLAlchemy"],
     theme: {
       border: "border-[#7F5CFF]/50 hover:border-[#7F5CFF]",
-      glow: "hover:shadow-[0_15px_40px_rgba(127,92,255,0.3)]",
+      glow: "hover:shadow-[0_15px_45px_rgba(127,92,255,0.35)]",
       badgeBg: "bg-[#7F5CFF]/20 border-[#7F5CFF]/40",
       badgeText: "text-[#B09BFF]",
+      accentGradient: "from-[#7F5CFF] to-[#4CE0FF]",
     },
     features: [
       "Interactive learning material distribution",
@@ -87,9 +90,10 @@ const projects: Project[] = [
     tags: ["Python", "Machine Learning", "Scikit-Learn", "Pandas", "NumPy"],
     theme: {
       border: "border-[#FF5500]/50 hover:border-[#FF5500]",
-      glow: "hover:shadow-[0_15px_40px_rgba(255,85,0,0.3)]",
+      glow: "hover:shadow-[0_15px_45px_rgba(255,85,0,0.35)]",
       badgeBg: "bg-[#FF5500]/20 border-[#FF5500]/40",
       badgeText: "text-[#FF8844]",
+      accentGradient: "from-[#FF5500] to-[#7F5CFF]",
     },
     features: [
       "Supervised & unsupervised learning models",
@@ -107,9 +111,10 @@ const projects: Project[] = [
     tags: ["JavaScript", "HTML5", "CSS3", "Git"],
     theme: {
       border: "border-[#4CE0FF]/50 hover:border-[#4CE0FF]",
-      glow: "hover:shadow-[0_15px_40px_rgba(76,224,255,0.3)]",
+      glow: "hover:shadow-[0_15px_45px_rgba(76,224,255,0.35)]",
       badgeBg: "bg-[#4CE0FF]/20 border-[#4CE0FF]/40",
       badgeText: "text-[#4CE0FF]",
+      accentGradient: "from-[#4CE0FF] to-[#7F5CFF]",
     },
   },
   {
@@ -122,9 +127,10 @@ const projects: Project[] = [
     tags: ["JavaScript", "HTML5", "CSS3", "Local Storage"],
     theme: {
       border: "border-emerald-500/50 hover:border-emerald-400",
-      glow: "hover:shadow-[0_15px_40px_rgba(16,185,129,0.3)]",
+      glow: "hover:shadow-[0_15px_45px_rgba(16,185,129,0.35)]",
       badgeBg: "bg-emerald-500/20 border-emerald-500/40",
       badgeText: "text-emerald-300",
+      accentGradient: "from-emerald-400 to-[#4CE0FF]",
     },
   },
   {
@@ -137,9 +143,10 @@ const projects: Project[] = [
     tags: ["JavaScript", "DOM Logic", "CSS3"],
     theme: {
       border: "border-amber-500/50 hover:border-amber-400",
-      glow: "hover:shadow-[0_15px_40px_rgba(245,158,11,0.3)]",
+      glow: "hover:shadow-[0_15px_45px_rgba(245,158,11,0.35)]",
       badgeBg: "bg-amber-500/20 border-amber-500/40",
       badgeText: "text-amber-300",
+      accentGradient: "from-amber-400 to-[#FF5500]",
     },
   },
   {
@@ -152,9 +159,10 @@ const projects: Project[] = [
     tags: ["JavaScript", "Security", "CSS3", "DOM Logic"],
     theme: {
       border: "border-purple-500/50 hover:border-purple-400",
-      glow: "hover:shadow-[0_15px_40px_rgba(168,85,247,0.3)]",
+      glow: "hover:shadow-[0_15px_45px_rgba(168,85,247,0.35)]",
       badgeBg: "bg-purple-500/20 border-purple-500/40",
       badgeText: "text-purple-300",
+      accentGradient: "from-purple-400 to-[#7F5CFF]",
     },
   },
 ];
@@ -315,22 +323,25 @@ export default function ProjectsSection() {
           </div>
         </motion.div>
 
-        {/* VIBRANT, BEAUTIFULLY COLORED SECONDARY PROJECTS GRID */}
+        {/* HIGH-ANIMATION SECONDARY PROJECTS GRID (PHOTO 3 FIX) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {secondaryProjects.map((project, idx) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -8, scale: 1.02 }}
+              whileHover={{ y: -10, scale: 1.03 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.08 }}
               className={`glass-panel rounded-3xl p-7 sm:p-8 border ${project.theme.border} ${project.theme.glow} transition-all duration-300 flex flex-col justify-between group cursor-pointer h-full relative overflow-hidden`}
               onClick={() => setSelectedProject(project)}
             >
+              {/* Subtle Gradient Backlight Overlay on Hover */}
+              <div className={`absolute top-0 right-0 w-44 h-44 bg-gradient-to-br ${project.theme.accentGradient} opacity-10 rounded-full blur-3xl group-hover:opacity-25 group-hover:scale-125 transition-all duration-500 pointer-events-none`} />
+
               <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className={`text-xs font-mono font-black uppercase tracking-wider px-3 py-1 rounded-md ${project.theme.badgeBg} ${project.theme.badgeText}`}>
+                <div className="flex items-center justify-between mb-4">
+                  <span className={`text-xs font-mono font-black uppercase tracking-wider px-3.5 py-1 rounded-full ${project.theme.badgeBg} ${project.theme.badgeText} border shadow-sm`}>
                     {project.category}
                   </span>
                   {project.date && (
@@ -350,18 +361,22 @@ export default function ProjectsSection() {
               </div>
 
               <div className="mt-6 pt-5 border-t border-white/15">
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-5">
                   {project.tags.slice(0, 4).map((t) => (
-                    <span key={t} className={`text-xs font-mono font-bold px-3 py-1 rounded-lg ${project.theme.badgeBg} ${project.theme.badgeText} shadow-sm`}>
+                    <motion.span
+                      key={t}
+                      whileHover={{ scale: 1.08 }}
+                      className={`text-xs font-mono font-bold px-3.5 py-1 rounded-xl ${project.theme.badgeBg} ${project.theme.badgeText} border shadow-sm cursor-pointer`}
+                    >
                       {t}
-                    </span>
+                    </motion.span>
                   ))}
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-mono text-[#FF5500] group-hover:text-[#FF8844] font-black flex items-center gap-1.5">
+                <div className="flex items-center justify-between pt-1">
+                  <span className="text-sm font-mono text-[#FF5500] group-hover:text-[#FF8844] font-black flex items-center gap-2 group-hover:translate-x-1.5 transition-transform">
                     <span>View Details</span>
-                    <span>→</span>
+                    <ArrowRight className="w-4 h-4" />
                   </span>
 
                   {project.githubUrl && (
@@ -370,7 +385,7 @@ export default function ProjectsSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="text-zinc-200 hover:text-white p-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 transition-colors"
+                      className="text-zinc-200 hover:text-white p-2.5 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/20 transition-all group-hover:scale-110"
                       aria-label="GitHub Repository"
                     >
                       <GithubIcon className="w-5 h-5" />

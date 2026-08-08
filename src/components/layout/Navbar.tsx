@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Terminal, ExternalLink } from "lucide-react";
+import { Menu, X, Terminal, ExternalLink, Download } from "lucide-react";
 import Link from "next/link";
 
 const navLinks = [
@@ -72,28 +72,32 @@ export default function Navbar({ onOpenResumeModal }: NavbarProps) {
       <nav
         className={`w-full transition-all duration-300 ${
           scrolled
-            ? "py-3.5 bg-[#0A0A12]/90 backdrop-blur-2xl border-b border-white/15 shadow-2xl shadow-black/90"
+            ? "py-3.5 bg-[#0A0A12]/92 backdrop-blur-2xl border-b border-white/15 shadow-2xl shadow-black/90"
             : "py-5 bg-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Brand Logo */}
+          
+          {/* Brand Logo with Glowing AI & ML Badge */}
           <Link href="#" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-[#7F5CFF]/20 border border-[#7F5CFF]/40 flex items-center justify-center text-[#7F5CFF] group-hover:border-[#FF5500] group-hover:bg-[#FF5500]/20 transition-all duration-300 shadow-md">
-              <Terminal className="w-5 h-5" />
+            <div className="w-11 h-11 rounded-2xl bg-[#7F5CFF]/20 border border-[#7F5CFF]/40 flex items-center justify-center text-[#7F5CFF] group-hover:border-[#FF5500] group-hover:bg-[#FF5500]/20 transition-all duration-300 shadow-md group-hover:scale-105">
+              <Terminal className="w-5 h-5 text-[#4CE0FF] group-hover:text-[#FF5500] transition-colors" />
             </div>
             <div className="flex flex-col">
               <span className="font-display text-lg sm:text-xl font-black tracking-tight text-white group-hover:text-[#4CE0FF] transition-colors">
                 Amit Singh
               </span>
-              <span className="text-xs text-[#FF5500] font-mono tracking-widest uppercase font-bold">
-                AI & SOFTWARE
-              </span>
+              <div className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-[#FF5500] animate-ping inline-block" />
+                <span className="text-xs font-mono font-black tracking-wider uppercase bg-gradient-to-r from-[#FF5500] via-[#7F5CFF] to-[#4CE0FF] bg-clip-text text-transparent">
+                  AI & ML • FULL STACK
+                </span>
+              </div>
             </div>
           </Link>
 
           {/* Desktop Nav Items */}
-          <div className="hidden lg:flex items-center gap-1.5 bg-[#12121C]/90 backdrop-blur-xl px-4 py-2 rounded-full border border-white/15 shadow-lg">
+          <div className="hidden lg:flex items-center gap-1 bg-[#12121C]/90 backdrop-blur-xl px-4 py-2 rounded-full border border-white/15 shadow-lg">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.substring(1);
               return (
@@ -119,25 +123,30 @@ export default function Navbar({ onOpenResumeModal }: NavbarProps) {
             })}
           </div>
 
-          {/* Action Callouts */}
+          {/* Action Callouts: Download Resume & Sales Dashboard */}
           <div className="hidden sm:flex items-center gap-3">
             {onOpenResumeModal && (
-              <button
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
                 onClick={onOpenResumeModal}
-                className="px-4 py-2 text-xs sm:text-sm font-bold text-[#4CE0FF] bg-[#12121C] hover:bg-[#1A1A2A] border border-[#4CE0FF]/40 hover:border-[#4CE0FF] rounded-full transition-all duration-200 shadow-md"
+                className="px-4.5 py-2 text-xs sm:text-sm font-extrabold text-[#4CE0FF] bg-[#12121C] hover:bg-[#1A1A2A] border border-[#4CE0FF]/50 hover:border-[#4CE0FF] rounded-full transition-all duration-200 shadow-md flex items-center gap-2"
               >
-                Resume
-              </button>
+                <Download className="w-4 h-4 text-[#4CE0FF]" />
+                <span>Download Resume</span>
+              </motion.button>
             )}
-            <a
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
               href="https://sales-dashboard07.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4.5 py-2 text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-[#7F5CFF] to-[#FF5500] hover:from-[#6A47EB] hover:to-[#E64D00] rounded-full flex items-center gap-2 transition-all duration-200 shadow-md shadow-[#FF5500]/30 hover:scale-[1.03]"
+              className="px-4.5 py-2 text-xs sm:text-sm font-extrabold text-white bg-gradient-to-r from-[#7F5CFF] to-[#FF5500] hover:from-[#6A47EB] hover:to-[#E64D00] rounded-full flex items-center gap-2 transition-all duration-200 shadow-md shadow-[#FF5500]/30"
             >
               <span>Sales Dashboard</span>
               <ExternalLink className="w-4 h-4" />
-            </a>
+            </motion.a>
           </div>
 
           {/* Mobile Menu Toggle Button */}
@@ -180,16 +189,17 @@ export default function Navbar({ onOpenResumeModal }: NavbarProps) {
                       setMobileMenuOpen(false);
                       onOpenResumeModal();
                     }}
-                    className="w-full py-3 text-sm font-bold text-center text-[#4CE0FF] bg-[#12121C] border border-[#4CE0FF]/40 rounded-xl"
+                    className="w-full py-3 text-sm font-extrabold text-center text-[#4CE0FF] bg-[#12121C] border border-[#4CE0FF]/50 rounded-xl flex items-center justify-center gap-2"
                   >
-                    View Resume
+                    <Download className="w-4 h-4 text-[#4CE0FF]" />
+                    <span>Download Resume</span>
                   </button>
                 )}
                 <a
                   href="https://sales-dashboard07.vercel.app"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-3 text-sm font-bold text-center text-white bg-[#7F5CFF] rounded-xl flex items-center justify-center gap-2"
+                  className="w-full py-3 text-sm font-extrabold text-center text-white bg-[#7F5CFF] rounded-xl flex items-center justify-center gap-2"
                 >
                   <span>Sales Dashboard Live</span>
                   <ExternalLink className="w-4 h-4" />

@@ -103,7 +103,7 @@ CERTIFICATIONS
                 </div>
                 <div>
                   <h3 className="text-xl font-bold font-display text-white">
-                    Amit Singh — Curriculum Vitae
+                    Amit Singh — Official Resume
                   </h3>
                   <p className="text-xs text-[#4CE0FF] font-mono">
                     Software Developer • AI & ML
@@ -114,10 +114,10 @@ CERTIFICATIONS
               <div className="flex items-center gap-2">
                 <button
                   onClick={handleDownload}
-                  className="px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-[#FF5500] to-[#7F5CFF] hover:from-[#E64D00] hover:to-[#6A47EB] rounded-full flex items-center gap-1.5 shadow-lg transition-all"
+                  className="px-4 py-2 text-xs font-extrabold text-white bg-gradient-to-r from-[#FF5500] to-[#7F5CFF] hover:from-[#E64D00] hover:to-[#6A47EB] rounded-full flex items-center gap-1.5 shadow-lg transition-all"
                 >
-                  <Download className="w-3.5 h-3.5" />
-                  <span>Download</span>
+                  <Download className="w-4 h-4" />
+                  <span>Download Resume</span>
                 </button>
 
                 <button
@@ -236,10 +236,10 @@ CERTIFICATIONS
 
               <button
                 onClick={handleDownload}
-                className="px-4 py-2 text-xs font-semibold text-white bg-[#7F5CFF] hover:bg-[#6A47EB] rounded-full flex items-center gap-1.5"
+                className="px-5 py-2.5 text-xs font-extrabold text-white bg-[#7F5CFF] hover:bg-[#6A47EB] rounded-full flex items-center gap-1.5"
               >
-                <Download className="w-3.5 h-3.5" />
-                <span>Save to Disk</span>
+                <Download className="w-4 h-4" />
+                <span>Download Resume</span>
               </button>
             </div>
 

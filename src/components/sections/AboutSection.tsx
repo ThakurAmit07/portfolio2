@@ -6,15 +6,15 @@ import OrbitingTechSphere from "../canvas/OrbitingTechSphere";
 
 export default function AboutSection() {
   const stats = [
-    { label: "B.Tech CSE", value: "GLA Univ", sub: "Education", icon: <Award className="w-5 h-5 text-[#FF5500]" /> },
-    { label: "Technical", value: "8+ Domains", sub: "Core Skills", icon: <Cpu className="w-5 h-5 text-[#7F5CFF]" /> },
-    { label: "Verified", value: "4 Certs", sub: "Certifications", icon: <Sparkles className="w-5 h-5 text-[#4CE0FF]" /> },
-    { label: "Live System", value: "EduLeap", sub: "Full-Stack App", icon: <Code className="w-5 h-5 text-[#FF5500]" /> },
+    { label: "B.Tech CSE (AI & ML)", value: "GLA University", sub: "Education", icon: <Award className="w-5 h-5 text-[#FF5500]" /> },
+    { label: "Engineering Capabilities", value: "8+ Core Skills", sub: "Technical Stack", icon: <Cpu className="w-5 h-5 text-[#7F5CFF]" /> },
+    { label: "Industry Credentials", value: "4 Certifications", sub: "Verified", icon: <Sparkles className="w-5 h-5 text-[#4CE0FF]" /> },
+    { label: "Production Web App", value: "EduLeap+", sub: "Full-Stack System", icon: <Code className="w-5 h-5 text-[#FF5500]" /> },
   ];
 
   return (
     <section id="about" className="py-16 relative overflow-hidden z-10">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           {/* Left Column: Bio & Highlights */}
@@ -49,8 +49,8 @@ export default function AboutSection() {
               </p>
             </div>
 
-            {/* 100% Fully Visible Text Metrics Grid (No Ellipsis/Truncation) */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-3">
+            {/* FULL TEXT Stat Cards Grid (GLA University & 4 Certifications 100% Fully Visible) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-3">
               {stats.map((stat, idx) => (
                 <motion.div
                   key={idx}
@@ -59,16 +59,16 @@ export default function AboutSection() {
                   whileHover={{ y: -6, scale: 1.03 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.08, duration: 0.4 }}
-                  className="p-3.5 sm:p-4 rounded-2xl bg-[#12121C]/95 border border-[#7F5CFF]/40 backdrop-blur-md hover:border-[#FF5500] hover:shadow-[0_10px_25px_rgba(255,85,0,0.3)] transition-all group cursor-pointer flex flex-col justify-between"
+                  className="p-5 rounded-2xl bg-[#12121C]/95 border border-[#7F5CFF]/40 backdrop-blur-md hover:border-[#FF5500] hover:shadow-[0_10px_30px_rgba(255,85,0,0.3)] transition-all group cursor-pointer flex flex-col justify-between"
                 >
                   <div className="flex items-center justify-between mb-2">
                     <div className="group-hover:scale-110 transition-transform">{stat.icon}</div>
-                    <span className="text-[10px] font-mono font-extrabold text-[#FF5500] uppercase tracking-wider">STATS</span>
+                    <span className="text-xs font-mono font-black text-[#FF5500] uppercase tracking-wider">METRIC STAT</span>
                   </div>
-                  <div className="text-base sm:text-lg font-black font-display text-white group-hover:text-[#4CE0FF] transition-colors mt-1 whitespace-nowrap">
+                  <div className="text-xl sm:text-2xl font-black font-display text-white group-hover:text-[#4CE0FF] transition-colors mt-1">
                     {stat.value}
                   </div>
-                  <div className="text-xs text-zinc-300 mt-1 font-bold font-body whitespace-nowrap">
+                  <div className="text-xs sm:text-sm text-zinc-300 mt-1 font-bold font-body">
                     {stat.label}
                   </div>
                 </motion.div>
