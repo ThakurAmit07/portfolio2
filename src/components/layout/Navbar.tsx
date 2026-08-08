@@ -12,7 +12,6 @@ const navLinks = [
   { name: "Skills", href: "#skills" },
   { name: "Certifications", href: "#certifications" },
   { name: "Journey", href: "#journey" },
-  { name: "GitHub", href: "#github" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -62,7 +61,7 @@ export default function Navbar({ onOpenResumeModal }: NavbarProps) {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       {/* Top Scroll Progress Bar */}
-      <div className="w-full h-[2px] bg-white/5">
+      <div className="w-full h-[3px] bg-white/5">
         <motion.div
           className="h-full bg-gradient-to-r from-[#FF5500] via-[#7F5CFF] to-[#4CE0FF]"
           style={{ width: `${scrollProgress}%` }}
@@ -73,44 +72,44 @@ export default function Navbar({ onOpenResumeModal }: NavbarProps) {
       <nav
         className={`w-full transition-all duration-300 ${
           scrolled
-            ? "py-3 bg-[#0A0A12]/85 backdrop-blur-xl border-b border-white/10 shadow-2xl shadow-black/80"
+            ? "py-3.5 bg-[#0A0A12]/90 backdrop-blur-2xl border-b border-white/15 shadow-2xl shadow-black/90"
             : "py-5 bg-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Brand Logo */}
-          <Link href="#" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 rounded-lg bg-[#7F5CFF]/20 border border-[#7F5CFF]/30 flex items-center justify-center text-[#7F5CFF] group-hover:border-[#FF5500] group-hover:bg-[#FF5500]/20 transition-all duration-300">
-              <Terminal className="w-4 h-4" />
+          <Link href="#" className="flex items-center gap-3 group">
+            <div className="w-10 h-10 rounded-xl bg-[#7F5CFF]/20 border border-[#7F5CFF]/40 flex items-center justify-center text-[#7F5CFF] group-hover:border-[#FF5500] group-hover:bg-[#FF5500]/20 transition-all duration-300 shadow-md">
+              <Terminal className="w-5 h-5" />
             </div>
             <div className="flex flex-col">
-              <span className="font-display text-base font-bold tracking-tight text-white group-hover:text-[#4CE0FF] transition-colors">
+              <span className="font-display text-lg sm:text-xl font-black tracking-tight text-white group-hover:text-[#4CE0FF] transition-colors">
                 Amit Singh
               </span>
-              <span className="text-[10px] text-zinc-400 font-mono tracking-wider uppercase">
+              <span className="text-xs text-[#FF5500] font-mono tracking-widest uppercase font-bold">
                 AI & SOFTWARE
               </span>
             </div>
           </Link>
 
           {/* Desktop Nav Items */}
-          <div className="hidden lg:flex items-center gap-1 bg-[#12121C]/70 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+          <div className="hidden lg:flex items-center gap-1.5 bg-[#12121C]/90 backdrop-blur-xl px-4 py-2 rounded-full border border-white/15 shadow-lg">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.substring(1);
               return (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`px-3.5 py-1.5 text-xs font-medium rounded-full transition-all duration-200 relative ${
+                  className={`px-4 py-2 text-xs sm:text-sm font-bold rounded-full transition-all duration-200 relative ${
                     isActive
-                      ? "text-white font-semibold"
-                      : "text-zinc-400 hover:text-zinc-200"
+                      ? "text-white"
+                      : "text-zinc-300 hover:text-white"
                   }`}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="activeTab"
-                      className="absolute inset-0 bg-[#7F5CFF]/30 border border-[#7F5CFF]/40 rounded-full"
+                      className="absolute inset-0 bg-[#7F5CFF]/35 border border-[#7F5CFF]/60 rounded-full shadow-[0_0_15px_rgba(127,92,255,0.3)]"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -125,7 +124,7 @@ export default function Navbar({ onOpenResumeModal }: NavbarProps) {
             {onOpenResumeModal && (
               <button
                 onClick={onOpenResumeModal}
-                className="px-3.5 py-1.5 text-xs font-medium text-[#4CE0FF] bg-[#12121C]/80 hover:bg-[#1A1A2A] border border-[#4CE0FF]/30 hover:border-[#4CE0FF]/60 rounded-full transition-all duration-200"
+                className="px-4 py-2 text-xs sm:text-sm font-bold text-[#4CE0FF] bg-[#12121C] hover:bg-[#1A1A2A] border border-[#4CE0FF]/40 hover:border-[#4CE0FF] rounded-full transition-all duration-200 shadow-md"
               >
                 Resume
               </button>
@@ -134,20 +133,20 @@ export default function Navbar({ onOpenResumeModal }: NavbarProps) {
               href="https://sales-dashboard07.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3.5 py-1.5 text-xs font-semibold text-white bg-gradient-to-r from-[#7F5CFF] to-[#FF5500] hover:from-[#6A47EB] hover:to-[#E64D00] rounded-full flex items-center gap-1.5 transition-all duration-200 shadow-md shadow-[#FF5500]/20"
+              className="px-4.5 py-2 text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-[#7F5CFF] to-[#FF5500] hover:from-[#6A47EB] hover:to-[#E64D00] rounded-full flex items-center gap-2 transition-all duration-200 shadow-md shadow-[#FF5500]/30 hover:scale-[1.03]"
             >
               <span>Sales Dashboard</span>
-              <ExternalLink className="w-3 h-3" />
+              <ExternalLink className="w-4 h-4" />
             </a>
           </div>
 
           {/* Mobile Menu Toggle Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg bg-white/5 border border-white/10 text-zinc-300 hover:text-white"
+            className="lg:hidden p-2.5 rounded-xl bg-white/10 border border-white/15 text-zinc-200 hover:text-white"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </nav>
@@ -159,7 +158,7 @@ export default function Navbar({ onOpenResumeModal }: NavbarProps) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-[#0A0A12]/95 backdrop-blur-2xl border-b border-white/10 overflow-hidden"
+            className="lg:hidden bg-[#0A0A12]/98 backdrop-blur-2xl border-b border-white/15 overflow-hidden"
           >
             <div className="px-6 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
@@ -167,21 +166,21 @@ export default function Navbar({ onOpenResumeModal }: NavbarProps) {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-sm font-medium text-zinc-300 hover:text-[#4CE0FF] py-1 transition-colors flex items-center justify-between border-b border-white/5"
+                  className="text-base font-bold text-zinc-200 hover:text-[#4CE0FF] py-2 transition-colors flex items-center justify-between border-b border-white/10"
                 >
                   <span>{link.name}</span>
-                  <span className="text-xs text-zinc-600 font-mono">→</span>
+                  <span className="text-sm text-zinc-500 font-mono">→</span>
                 </Link>
               ))}
 
-              <div className="pt-2 flex flex-col gap-2.5">
+              <div className="pt-2 flex flex-col gap-3">
                 {onOpenResumeModal && (
                   <button
                     onClick={() => {
                       setMobileMenuOpen(false);
                       onOpenResumeModal();
                     }}
-                    className="w-full py-2.5 text-xs font-semibold text-center text-[#4CE0FF] bg-[#12121C] border border-[#4CE0FF]/40 rounded-lg"
+                    className="w-full py-3 text-sm font-bold text-center text-[#4CE0FF] bg-[#12121C] border border-[#4CE0FF]/40 rounded-xl"
                   >
                     View Resume
                   </button>
@@ -190,10 +189,10 @@ export default function Navbar({ onOpenResumeModal }: NavbarProps) {
                   href="https://sales-dashboard07.vercel.app"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-2.5 text-xs font-semibold text-center text-white bg-[#7F5CFF] rounded-lg flex items-center justify-center gap-1.5"
+                  className="w-full py-3 text-sm font-bold text-center text-white bg-[#7F5CFF] rounded-xl flex items-center justify-center gap-2"
                 >
                   <span>Sales Dashboard Live</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
+                  <ExternalLink className="w-4 h-4" />
                 </a>
               </div>
             </div>
