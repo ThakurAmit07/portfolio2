@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Mail, Sparkles } from "lucide-react";
+import { Menu, X, Mail } from "lucide-react";
 import Link from "next/link";
 
 const navLinks = [
@@ -78,20 +78,22 @@ export default function Navbar({ onOpenResumeModal }: NavbarProps) {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           
-          {/* Stunning Brand Logo with Amit Singh + AI & ML Below with Spacing */}
+          {/* BRAND LOGO (Image 3 Fix): AS Box height enlarged to perfectly match Amit Singh + AI & ML combined height */}
           <Link href="#" className="flex items-center gap-3.5 group">
-            <div className="relative">
+            <div className="relative shrink-0">
               <motion.div
-                whileHover={{ rotate: 5, scale: 1.08 }}
-                className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-[#FF5500] via-[#7F5CFF] to-[#4CE0FF] p-[1.5px] shadow-lg shadow-[#FF5500]/25"
+                whileHover={{ rotate: 6, scale: 1.08 }}
+                transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-tr from-[#FF5500] via-[#7F5CFF] to-[#4CE0FF] p-[2px] shadow-lg shadow-[#7F5CFF]/30 group-hover:shadow-[#FF5500]/40"
               >
-                <div className="w-full h-full bg-[#0A0A12] rounded-[14px] flex items-center justify-center font-display font-black text-base text-white group-hover:bg-transparent transition-all">
+                <div className="w-full h-full bg-[#0A0A12] rounded-[14px] flex items-center justify-center font-display font-black text-lg text-white group-hover:bg-transparent transition-all duration-300">
                   AS
                 </div>
               </motion.div>
-              <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-400 border-2 border-[#0A0A12] shadow-sm animate-pulse" />
+              <span className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-emerald-400 border-2 border-[#0A0A12] shadow-sm animate-pulse" />
             </div>
 
+            {/* Vertically Centered Name & Subtitle Stack */}
             <div className="flex flex-col justify-center my-auto">
               <span className="font-display text-xl sm:text-2xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-100 to-[#4CE0FF] group-hover:to-[#FF5500] transition-all leading-tight">
                 Amit Singh
@@ -105,8 +107,8 @@ export default function Navbar({ onOpenResumeModal }: NavbarProps) {
             </div>
           </Link>
 
-          {/* Animated Desktop Nav Items with Vibrant Text Colors */}
-          <div className="hidden lg:flex items-center gap-1 bg-[#12121C]/95 backdrop-blur-xl px-4 py-2 rounded-full border border-white/15 shadow-xl">
+          {/* EK DAM MAST NAV LINKS CONTAINER (Image 2 Fix): Premium animated glass pill with active tab glow */}
+          <div className="hidden lg:flex items-center gap-1 bg-[#12121C]/90 backdrop-blur-2xl px-4 py-2 rounded-full border border-white/20 shadow-2xl shadow-black/80">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.substring(1);
               return (
@@ -122,7 +124,7 @@ export default function Navbar({ onOpenResumeModal }: NavbarProps) {
                   {isActive && (
                     <motion.div
                       layoutId="activeTab"
-                      className="absolute inset-0 bg-[#7F5CFF]/40 border border-[#7F5CFF]/70 rounded-full shadow-[0_0_20px_rgba(127,92,255,0.4)]"
+                      className="absolute inset-0 bg-gradient-to-r from-[#FF5500]/30 via-[#7F5CFF]/40 to-[#4CE0FF]/30 border border-[#7F5CFF]/70 rounded-full shadow-[0_0_20px_rgba(127,92,255,0.4)]"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -132,24 +134,21 @@ export default function Navbar({ onOpenResumeModal }: NavbarProps) {
             })}
           </div>
 
-          {/* Top Right AS Mail Avatar Widget (Sales Dashboard & Contact Mail Buttons Removed) */}
+          {/* SUNDAR ANIMATED MAIL BUTTON (Image 1 Fix): AS circle & Amit text removed, keeps sleek Mail icon + Contact Mail */}
           <div className="hidden sm:flex items-center gap-3">
             <motion.a
               whileHover={{ scale: 1.06, y: -2 }}
               whileTap={{ scale: 0.95 }}
               href="mailto:amitsinghthakur0007@gmail.com"
-              className="group flex items-center gap-2.5 px-4.5 py-2.5 rounded-full bg-gradient-to-r from-[#12121C] to-[#1A1028] border border-[#7F5CFF]/50 hover:border-[#FF5500] shadow-md shadow-[#7F5CFF]/20 hover:shadow-[#FF5500]/30 transition-all duration-300"
+              className="group flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#12121C] via-[#1A1028] to-[#12121C] border border-[#7F5CFF]/60 hover:border-[#FF5500] shadow-lg shadow-[#7F5CFF]/20 hover:shadow-[#FF5500]/40 transition-all duration-300 cursor-pointer"
               title="Click to email amitsinghthakur0007@gmail.com"
             >
-              <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-[#FF5500] to-[#7F5CFF] flex items-center justify-center font-black text-xs text-white shadow-sm">
-                AS
+              <div className="w-8 h-8 rounded-full bg-[#0A0A12] border border-[#4CE0FF]/50 flex items-center justify-center text-[#4CE0FF] group-hover:text-[#FF5500] group-hover:border-[#FF5500] transition-colors shadow-sm">
+                <Mail className="w-4 h-4" />
               </div>
-              <div className="flex items-center gap-1.5">
-                <Mail className="w-4 h-4 text-[#4CE0FF] group-hover:text-[#FF5500] transition-colors" />
-                <span className="text-xs sm:text-sm font-extrabold text-white font-mono group-hover:text-[#4CE0FF] transition-colors">
-                  Mail Amit
-                </span>
-              </div>
+              <span className="text-xs sm:text-sm font-extrabold text-white font-mono group-hover:text-[#4CE0FF] transition-colors tracking-wide">
+                Contact Mail
+              </span>
             </motion.a>
           </div>
 
@@ -192,7 +191,7 @@ export default function Navbar({ onOpenResumeModal }: NavbarProps) {
                   className="w-full py-3 text-sm font-extrabold text-center text-[#4CE0FF] bg-[#12121C] border border-[#4CE0FF]/50 rounded-xl flex items-center justify-center gap-2"
                 >
                   <Mail className="w-4 h-4 text-[#4CE0FF]" />
-                  <span>Email amitsinghthakur0007@gmail.com</span>
+                  <span>Contact Mail</span>
                 </a>
 
                 {onOpenResumeModal && (
@@ -203,8 +202,7 @@ export default function Navbar({ onOpenResumeModal }: NavbarProps) {
                     }}
                     className="w-full py-3 text-sm font-extrabold text-center text-white bg-[#7F5CFF] rounded-xl flex items-center justify-center gap-2"
                   >
-                    <Sparkles className="w-4 h-4 text-[#FF5500]" />
-                    <span>Download Official Resume</span>
+                    <span>Download Resume</span>
                   </button>
                 )}
               </div>
