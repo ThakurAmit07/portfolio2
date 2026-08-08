@@ -20,11 +20,19 @@ GitHub: https://github.com/ThakurAmit07
 ============================================================
 EDUCATION
 ============================================================
-GLA University, Mathura, UP, India
-B.Tech — Computer Science & Engineering (AI & ML) | 2025 — Present
-- 1st Semester SGPA: 8.25
-- 2nd Semester SGPA: 9.00
-- Cumulative Overall SGPA: 8.65
+1. GLA University, Mathura, UP, India
+   B.Tech — Computer Science & Engineering (AI & ML) | 2025 — Present
+   - 1st Semester SGPA: 8.25
+   - 2nd Semester SGPA: 9.00
+   - Cumulative Overall SGPA: 8.65
+
+2. Central Board of Secondary Education (CBSE)
+   Class XII — Senior Secondary (Intermediate) | 2025
+   - Score: 73.20%
+
+3. Central Board of Secondary Education (CBSE)
+   Class X — High School Examination | 2023
+   - Score: 84.80%
 
 ============================================================
 FEATURED PROJECTS
@@ -95,7 +103,7 @@ CERTIFICATIONS
                 </div>
                 <div>
                   <h3 className="text-xl font-bold font-display text-white">
-                    Amit Singh — Professional Profile & CV
+                    Amit Singh — Curriculum Vitae
                   </h3>
                   <p className="text-xs text-[#4CE0FF] font-mono">
                     Software Developer • AI & ML
@@ -146,6 +154,22 @@ CERTIFICATIONS
                       <span className="text-emerald-400 font-bold text-sm">8.65 Overall SGPA</span>
                       <span className="block text-[10px] text-zinc-500">1st: 8.25 | 2nd: 9.00</span>
                     </div>
+                  </div>
+
+                  <div className="bg-white/5 p-4 rounded-xl border border-white/5 flex justify-between items-center">
+                    <div>
+                      <h5 className="font-bold text-white">CBSE Class XII (Intermediate)</h5>
+                      <p className="text-zinc-400 text-xs">2025</p>
+                    </div>
+                    <span className="font-mono text-zinc-200 font-bold">73.20%</span>
+                  </div>
+
+                  <div className="bg-white/5 p-4 rounded-xl border border-white/5 flex justify-between items-center">
+                    <div>
+                      <h5 className="font-bold text-white">CBSE Class X (High School)</h5>
+                      <p className="text-zinc-400 text-xs">2023</p>
+                    </div>
+                    <span className="font-mono text-zinc-200 font-bold">84.80%</span>
                   </div>
                 </div>
               </div>

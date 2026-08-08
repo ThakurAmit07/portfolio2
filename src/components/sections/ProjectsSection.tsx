@@ -142,7 +142,7 @@ export default function ProjectsSection() {
           </p>
         </motion.div>
 
-        {/* FEATURED PROJECT SHOWCASE CARD */}
+        {/* FEATURED PROJECT SHOWCASE CARD WITH PROMINENT LARGE PREVIEW */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -152,52 +152,54 @@ export default function ProjectsSection() {
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
-            {/* Left Interactive Browser Preview */}
+            {/* Left Interactive Large Browser Preview Frame */}
             <div
-              className="lg:col-span-7 group relative rounded-2xl overflow-hidden border border-white/20 bg-gradient-to-br from-[#12121C] via-[#0A0A12] to-black p-2 cursor-pointer shadow-2xl"
+              className="lg:col-span-7 group relative rounded-3xl overflow-hidden border border-white/20 bg-gradient-to-br from-[#12121C] via-[#0A0A12] to-black p-2.5 cursor-pointer shadow-2xl"
               onClick={() => setSelectedProject(featuredProj)}
             >
-              <div className="px-4 py-2.5 bg-black/80 border-b border-white/15 rounded-t-xl flex items-center justify-between">
-                <div className="flex items-center gap-1.5">
-                  <span className="w-3 h-3 rounded-full bg-red-500 inline-block" />
-                  <span className="w-3 h-3 rounded-full bg-yellow-500 inline-block" />
-                  <span className="w-3 h-3 rounded-full bg-green-500 inline-block" />
+              <div className="px-5 py-3 bg-black/90 border-b border-white/15 rounded-t-2xl flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="w-3.5 h-3.5 rounded-full bg-red-500 inline-block" />
+                  <span className="w-3.5 h-3.5 rounded-full bg-yellow-500 inline-block" />
+                  <span className="w-3.5 h-3.5 rounded-full bg-green-500 inline-block" />
                 </div>
-                <div className="text-xs font-mono font-bold text-white bg-white/10 px-3.5 py-1 rounded-full border border-white/15 flex items-center gap-1">
+                <div className="text-xs sm:text-sm font-mono font-bold text-white bg-white/10 px-4 py-1 rounded-full border border-white/20 flex items-center gap-1.5">
                   <span>sales-dashboard07.vercel.app</span>
                 </div>
                 <ExternalLink className="w-4 h-4 text-zinc-300" />
               </div>
 
-              <div className="h-64 sm:h-84 w-full bg-gradient-to-br from-[#1A1028] via-[#0A0A12] to-[#12121C] relative flex flex-col justify-between p-6 overflow-hidden group-hover:scale-[1.01] transition-transform duration-500">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs sm:text-sm font-mono font-black text-[#FF5500] bg-black/90 border border-[#FF5500]/50 px-3.5 py-1.5 rounded-full">
+              {/* Taller, Prominent Interactive Mockup Window */}
+              <div className="h-80 sm:h-[450px] lg:h-[480px] w-full bg-gradient-to-br from-[#1A1028] via-[#0A0A12] to-[#12121C] relative flex flex-col justify-between p-6 sm:p-8 overflow-hidden group-hover:scale-[1.01] transition-transform duration-500 rounded-b-2xl">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <span className="text-xs sm:text-sm font-mono font-black text-[#FF5500] bg-black/90 border border-[#FF5500]/60 px-4 py-1.5 rounded-full shadow-md">
                     LIVE PRODUCTION DEPLOYMENT
                   </span>
-                  <span className="text-xs sm:text-sm font-mono text-emerald-400 font-extrabold flex items-center gap-1.5 bg-black/70 px-3 py-1 rounded-full border border-emerald-500/30">
+                  <span className="text-xs sm:text-sm font-mono text-emerald-400 font-extrabold flex items-center gap-2 bg-black/80 px-3.5 py-1.5 rounded-full border border-emerald-500/40">
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping inline-block" />
                     Supabase Synced
                   </span>
                 </div>
 
-                <div className="grid grid-cols-3 gap-3.5 my-auto">
-                  <div className="bg-black/70 border border-[#FF5500]/40 p-4 rounded-xl">
-                    <span className="text-xs text-zinc-400 font-mono font-bold block">Today&apos;s Revenue</span>
-                    <span className="text-lg sm:text-xl font-black font-display text-white">Live Data</span>
+                {/* Dashboard Metrics Mockup */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-auto">
+                  <div className="bg-black/80 border border-[#FF5500]/50 p-5 rounded-2xl shadow-lg">
+                    <span className="text-xs text-zinc-400 font-mono font-extrabold block">Today&apos;s Revenue</span>
+                    <span className="text-xl sm:text-2xl font-black font-display text-white mt-1 block">Live Data</span>
                   </div>
-                  <div className="bg-black/70 border border-[#7F5CFF]/40 p-4 rounded-xl">
-                    <span className="text-xs text-zinc-400 font-mono font-bold block">Active Customers</span>
-                    <span className="text-lg sm:text-xl font-black font-display text-[#7F5CFF]">Syncing</span>
+                  <div className="bg-black/80 border border-[#7F5CFF]/50 p-5 rounded-2xl shadow-lg">
+                    <span className="text-xs text-zinc-400 font-mono font-extrabold block">Active Customers</span>
+                    <span className="text-xl sm:text-2xl font-black font-display text-[#7F5CFF] mt-1 block">Syncing</span>
                   </div>
-                  <div className="bg-black/70 border border-[#4CE0FF]/40 p-4 rounded-xl">
-                    <span className="text-xs text-zinc-400 font-mono font-bold block">AI Assistant</span>
-                    <span className="text-lg sm:text-xl font-black font-display text-[#4CE0FF]">Ready</span>
+                  <div className="bg-black/80 border border-[#4CE0FF]/50 p-5 rounded-2xl shadow-lg">
+                    <span className="text-xs text-zinc-400 font-mono font-extrabold block">AI Assistant</span>
+                    <span className="text-xl sm:text-2xl font-black font-display text-[#4CE0FF] mt-1 block">Ready</span>
                   </div>
                 </div>
 
-                <div className="absolute inset-0 bg-[#0A0A12]/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2">
-                  <span className="text-base font-extrabold text-white font-display">Open Live Dashboard</span>
-                  <ExternalLink className="w-5 h-5 text-[#FF5500]" />
+                <div className="absolute inset-0 bg-[#0A0A12]/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+                  <span className="text-lg font-black text-white font-display">Open Live Dashboard</span>
+                  <ExternalLink className="w-6 h-6 text-[#FF5500]" />
                 </div>
               </div>
             </div>
@@ -224,7 +226,7 @@ export default function ProjectsSection() {
                 </span>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-zinc-100 font-semibold">
                   {featuredProj.features?.slice(0, 4).map((f) => (
-                    <li key={f} className="flex items-center gap-2 bg-white/5 p-2 rounded-lg border border-white/10">
+                    <li key={f} className="flex items-center gap-2 bg-white/5 p-2.5 rounded-xl border border-white/10">
                       <CheckCircle2 className="w-4 h-4 text-[#FF5500] shrink-0" />
                       <span className="truncate">{f}</span>
                     </li>
@@ -246,14 +248,14 @@ export default function ProjectsSection() {
                     href={featuredProj.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3 text-sm font-extrabold text-white bg-gradient-to-r from-[#FF5500] to-[#7F5CFF] hover:from-[#E64D00] hover:to-[#6A47EB] rounded-full flex items-center gap-2 shadow-lg shadow-[#FF5500]/30 transition-all hover:scale-[1.03]"
+                    className="px-6 py-3.5 text-sm font-extrabold text-white bg-gradient-to-r from-[#FF5500] to-[#7F5CFF] hover:from-[#E64D00] hover:to-[#6A47EB] rounded-full flex items-center gap-2 shadow-lg shadow-[#FF5500]/30 transition-all hover:scale-[1.03]"
                   >
                     <span>Live Dashboard ↗</span>
                   </a>
 
                   <button
                     onClick={() => setSelectedProject(featuredProj)}
-                    className="px-5 py-3 text-sm font-bold text-zinc-200 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full transition-all"
+                    className="px-5 py-3.5 text-sm font-bold text-zinc-200 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full transition-all"
                   >
                     Overview & Details
                   </button>
