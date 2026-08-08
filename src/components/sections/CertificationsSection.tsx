@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Award, ShieldCheck, CheckCircle2, ExternalLink, X, Sparkles, Check, FileCheck, Cloud, Cpu, Code2 } from "lucide-react";
+import { Award, ShieldCheck, CheckCircle2, ExternalLink, X, Sparkles, Check, FileCheck, Cloud } from "lucide-react";
 
 interface Certification {
   id: string;
@@ -12,9 +12,10 @@ interface Certification {
   credentialId: string;
   featured: boolean;
   verifyUrl: string;
+  verifyLabel: string;
   skills: string[];
   description: string;
-  officialSite: string;
+  verificationPlatform: string;
   theme: {
     border: string;
     glow: string;
@@ -33,8 +34,9 @@ const certs: Certification[] = [
     date: "May 2026",
     credentialId: "AZ900-MS-849201-AS",
     featured: true,
-    verifyUrl: "https://learn.microsoft.com/en-us/credentials/",
-    officialSite: "Microsoft Learn Official Portal",
+    verifyUrl: "https://www.credly.com/org/microsoft/badges",
+    verifyLabel: "Verify on Credly / Microsoft Credential Badge ↗",
+    verificationPlatform: "Credly / Microsoft Official Portal",
     description: "Official Cloud Architecture & Azure Core Infrastructure certification covering cloud concepts, security, governance, identity management, and Azure service architectures.",
     skills: ["Cloud Architecture", "Azure Core Services", "Security & Governance", "Cloud Pricing", "Virtual Networks", "Resource Manager"],
     theme: {
@@ -53,8 +55,9 @@ const certs: Certification[] = [
     date: "2025",
     credentialId: "CWH-WEBDEV-984210",
     featured: false,
-    verifyUrl: "https://www.codewithharry.com/",
-    officialSite: "CodeWithHarry Learning Portal",
+    verifyUrl: "https://www.linkedin.com/in/amit-singh-435b46380/details/certifications/",
+    verifyLabel: "Check Out LinkedIn Certification ↗",
+    verificationPlatform: "LinkedIn Verified Certification",
     description: "Comprehensive Web Development Masterclass certification covering full-stack frontend engineering, modern JavaScript ES6+, DOM manipulation, and React.js app architecture.",
     skills: ["HTML5", "CSS3", "JavaScript ES6+", "React.js", "DOM Manipulation"],
     theme: {
@@ -73,8 +76,9 @@ const certs: Certification[] = [
     date: "2025",
     credentialId: "CWH-PYDS-774912",
     featured: false,
-    verifyUrl: "https://www.codewithharry.com/",
-    officialSite: "CodeWithHarry Learning Portal",
+    verifyUrl: "https://www.linkedin.com/in/amit-singh-435b46380/details/certifications/",
+    verifyLabel: "Check Out LinkedIn Certification ↗",
+    verificationPlatform: "LinkedIn Verified Certification",
     description: "Advanced Python Programming, Object-Oriented Software Design, Data Science pipelines, and Pandas numerical data processing certification.",
     skills: ["Python 3", "OOPs Concepts", "Data Science", "Pandas", "Matplotlib"],
     theme: {
@@ -93,8 +97,9 @@ const certs: Certification[] = [
     date: "April 2026",
     credentialId: "TCS-AI-CYBER-2026",
     featured: false,
-    verifyUrl: "https://learning.tcsionhub.in/",
-    officialSite: "TCS iON Digital Learning Hub",
+    verifyUrl: "https://www.linkedin.com/in/amit-singh-435b46380/details/certifications/",
+    verifyLabel: "Check Out LinkedIn Certification ↗",
+    verificationPlatform: "LinkedIn Verified Certification",
     description: "Industry awareness credential on Artificial Intelligence security threats, data privacy compliance, and cybersecurity defense principles.",
     skills: ["AI Security Principles", "Cyber Threat Mitigation", "Data Privacy"],
     theme: {
@@ -113,8 +118,9 @@ const certs: Certification[] = [
     date: "May 2026",
     credentialId: "TCS-GENAI-2026",
     featured: false,
-    verifyUrl: "https://learning.tcsionhub.in/",
-    officialSite: "TCS iON Digital Learning Hub",
+    verifyUrl: "https://www.linkedin.com/in/amit-singh-435b46380/details/certifications/",
+    verifyLabel: "Check Out LinkedIn Certification ↗",
+    verificationPlatform: "LinkedIn Verified Certification",
     description: "Foundational training in Generative Artificial Intelligence, Prompt Engineering strategies, and Large Language Model applications.",
     skills: ["Prompt Engineering", "Large Language Models", "Generative Architectures"],
     theme: {
@@ -133,8 +139,9 @@ const certs: Certification[] = [
     date: "April 2026",
     credentialId: "PROTEX-H2W-2026",
     featured: false,
-    verifyUrl: "https://protege.dev/",
-    officialSite: "Protege Official Platform",
+    verifyUrl: "https://www.linkedin.com/in/amit-singh-435b46380/details/certifications/",
+    verifyLabel: "Check Out LinkedIn Certification ↗",
+    verificationPlatform: "LinkedIn Verified Certification",
     description: "Hackathon achievement recognition for competitive software engineering, rapid web prototyping, and problem-solving under tight time constraints.",
     skills: ["Hackathon Coding", "Rapid Prototyping", "Problem Solving"],
     theme: {
@@ -168,18 +175,18 @@ export default function CertificationsSection() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#12121C] border border-[#7F5CFF]/40 text-[#4CE0FF] text-xs sm:text-sm font-mono mb-3 shadow-[0_0_15px_rgba(127,92,255,0.2)] font-bold">
             <Award className="w-4 h-4 text-[#FF5500]" />
-            <span className="uppercase tracking-widest">OFFICIAL ORGANIZATION VERIFIED CREDENTIALS</span>
+            <span className="uppercase tracking-widest">VERIFIED CREDENTIALS</span>
           </div>
 
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white">
             Industry & Cloud <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5500] via-[#7F5CFF] to-[#4CE0FF]">Certifications</span>
           </h2>
           <p className="text-zinc-300 text-base sm:text-lg max-w-xl mt-3 leading-relaxed font-body">
-            Official cloud architecture, CodeWithHarry masterclasses, TCS iON AI credentials, and competitive hackathon achievements.
+            Microsoft Credly credentials, CodeWithHarry masterclasses, TCS iON AI badges, and competitive hackathon awards.
           </p>
         </motion.div>
 
-        {/* PROMINENT, BOLD, TAGDA MICROSOFT AZURE FEATURED CARD (FULL WIDTH TOP FEATURED) */}
+        {/* PROMINENT, BOLD, TAGDA MICROSOFT AZURE FEATURED CARD */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -197,11 +204,11 @@ export default function CertificationsSection() {
               <div className="flex flex-wrap items-center gap-3 mb-4">
                 <span className="text-xs sm:text-sm font-mono font-black uppercase tracking-wider px-4 py-2 rounded-full bg-[#4CE0FF]/25 text-[#4CE0FF] border border-[#4CE0FF]/70 shadow-md flex items-center gap-2">
                   <Cloud className="w-4.5 h-4.5 text-[#4CE0FF] animate-pulse" />
-                  <span>★ OFFICIAL MICROSOFT CERTIFICATION</span>
+                  <span>★ OFFICIAL MICROSOFT CREDLY CERTIFICATION</span>
                 </span>
                 <span className="text-xs sm:text-sm font-mono text-emerald-400 font-extrabold flex items-center gap-1.5 bg-black/80 px-3.5 py-1.5 rounded-full border border-emerald-500/40">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  <span>Issuer Verified</span>
+                  <span>Credly Badge Verified</span>
                 </span>
                 <span className="text-xs sm:text-sm font-mono text-zinc-300 font-extrabold">
                   Date: {azureCert.date}
@@ -213,7 +220,7 @@ export default function CertificationsSection() {
               </h3>
 
               <p className="text-lg sm:text-xl font-extrabold text-[#4CE0FF] mt-3 font-mono">
-                Official Issuer: Microsoft Corporation
+                Issuer: Microsoft Corporation (Credly Authenticated)
               </p>
 
               <p className="text-zinc-200 text-base sm:text-lg leading-relaxed mt-4 max-w-3xl font-body">
@@ -228,7 +235,7 @@ export default function CertificationsSection() {
 
           <div className="pt-8">
             <span className="text-xs sm:text-sm font-mono text-zinc-300 uppercase tracking-widest block mb-4 font-black">
-              Official Verified Azure Competencies:
+              Verified Azure Competencies:
             </span>
             <div className="flex flex-wrap gap-3">
               {azureCert.skills.map((s) => (
@@ -245,7 +252,7 @@ export default function CertificationsSection() {
               </span>
 
               <span className="text-xs sm:text-sm font-mono font-black text-white bg-gradient-to-r from-[#FF5500] to-[#7F5CFF] px-6 py-3 rounded-full shadow-lg shadow-[#FF5500]/30 flex items-center gap-2 group-hover:scale-105 transition-transform">
-                <span>Verify Microsoft Credential Official Portal ↗</span>
+                <span>Verify Microsoft Badge on Credly ↗</span>
               </span>
             </div>
           </div>
@@ -297,7 +304,7 @@ export default function CertificationsSection() {
                 <span className="text-xs font-mono text-zinc-400 font-bold">ID: {cert.credentialId.substring(0, 10)}...</span>
 
                 <span className={`text-xs font-mono font-black ${cert.theme.accent} flex items-center gap-1.5 group-hover:scale-105 transition-transform bg-black/60 px-3 py-1.5 rounded-xl border border-white/10`}>
-                  <span>Verify Portal</span>
+                  <span>LinkedIn Verify</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </span>
               </div>
@@ -308,7 +315,7 @@ export default function CertificationsSection() {
 
       </div>
 
-      {/* FULL-SCREEN OFFICIAL ORGANIZATION VERIFICATION MODAL */}
+      {/* FULL-SCREEN CERTIFICATE VERIFICATION MODAL */}
       <AnimatePresence>
         {activeCert && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
@@ -339,7 +346,7 @@ export default function CertificationsSection() {
                 </div>
                 <div>
                   <span className="text-xs font-mono font-black text-emerald-400 uppercase tracking-widest block">
-                    OFFICIAL ORGANIZATION VERIFIED CREDENTIAL
+                    VERIFIED CERTIFICATE DOCUMENT
                   </span>
                   <span className="text-xs text-zinc-400 font-mono">
                     Issuer: {activeCert.issuer} • Date: {activeCert.date}
@@ -356,13 +363,13 @@ export default function CertificationsSection() {
                   <div className="flex items-center gap-3">
                     <Award className="w-8 h-8 text-[#FF5500]" />
                     <div>
-                      <h4 className="text-lg font-black text-white font-display">OFFICIAL ISSUER CERTIFICATE</h4>
+                      <h4 className="text-lg font-black text-white font-display">AUTHENTICATED CREDENTIAL</h4>
                       <p className="text-xs font-mono text-zinc-400">Issued to: <span className="text-[#4CE0FF] font-bold">Amit Singh</span></p>
                     </div>
                   </div>
                   <span className="text-xs font-mono font-bold text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/30 flex items-center gap-1">
                     <Check className="w-3.5 h-3.5" />
-                    <span>ORGANIZATION AUTHENTICATED</span>
+                    <span>VERIFIED</span>
                   </span>
                 </div>
 
@@ -372,7 +379,7 @@ export default function CertificationsSection() {
 
                 <div className="pt-4 border-t border-white/10 flex flex-wrap justify-between items-center text-xs font-mono text-zinc-400 gap-2">
                   <span>Credential ID: <span className="text-white font-bold">{activeCert.credentialId}</span></span>
-                  <span>Portal: <span className="text-[#4CE0FF] font-bold">{activeCert.officialSite}</span></span>
+                  <span>Platform: <span className="text-[#4CE0FF] font-bold">{activeCert.verificationPlatform}</span></span>
                 </div>
               </div>
 
@@ -397,7 +404,7 @@ export default function CertificationsSection() {
                   rel="noopener noreferrer"
                   className="px-6 py-3.5 text-xs sm:text-sm font-extrabold text-white bg-gradient-to-r from-[#FF5500] to-[#7F5CFF] hover:from-[#E64D00] hover:to-[#6A47EB] rounded-full flex items-center gap-2 shadow-lg shadow-[#FF5500]/30 transition-all hover:scale-105"
                 >
-                  <span>Verify on Official {activeCert.issuer} Portal ↗</span>
+                  <span>{activeCert.verifyLabel}</span>
                 </a>
 
                 <button
