@@ -35,7 +35,7 @@ const milestones = [
 
 export default function JourneySection() {
   return (
-    <section id="journey" className="py-24 relative z-10">
+    <section id="journey" className="py-16 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -44,17 +44,17 @@ export default function JourneySection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col items-center text-center mb-16"
+          className="flex flex-col items-center text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#12121C] border border-[#7F5CFF]/40 text-[#4CE0FF] text-xs font-mono mb-4 shadow-[0_0_15px_rgba(127,92,255,0.2)]">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#12121C] border border-[#7F5CFF]/40 text-[#4CE0FF] text-xs font-mono mb-3 shadow-[0_0_15px_rgba(127,92,255,0.2)]">
             <Milestone className="w-4 h-4 text-[#FF5500]" />
             <span className="uppercase tracking-widest font-bold">CHRONOLOGICAL PROGRESS</span>
           </div>
 
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
             Engineering <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5500] via-[#7F5CFF] to-[#4CE0FF]">Journey & Timeline</span>
           </h2>
-          <p className="text-zinc-400 text-base sm:text-lg max-w-2xl mt-4 leading-relaxed font-body">
+          <p className="text-zinc-400 text-sm sm:text-base max-w-xl mt-3 leading-relaxed font-body">
             Milestones tracking higher education, full-stack projects, and machine learning engineering.
           </p>
         </motion.div>
@@ -62,7 +62,7 @@ export default function JourneySection() {
         <div className="relative max-w-4xl mx-auto px-4">
           <div className="absolute left-6 sm:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#FF5500] via-[#7F5CFF] to-transparent -translate-x-1/2 opacity-40" />
 
-          <div className="space-y-12">
+          <div className="space-y-10">
             {milestones.map((item, idx) => {
               const Icon = item.icon;
               const isEven = idx % 2 === 0;
@@ -70,10 +70,10 @@ export default function JourneySection() {
               return (
                 <motion.div
                   key={`${item.title}-${idx}`}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 25 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: idx * 0.1 }}
+                  transition={{ duration: 0.5, delay: idx * 0.08 }}
                   className={`relative flex flex-col sm:flex-row items-start ${
                     isEven ? "sm:flex-row-reverse" : ""
                   }`}
@@ -85,7 +85,11 @@ export default function JourneySection() {
                   </div>
 
                   <div className={`ml-16 sm:ml-0 sm:w-1/2 ${isEven ? "sm:pl-12" : "sm:pr-12"}`}>
-                    <div className="glass-panel rounded-3xl p-7 sm:p-8 border border-white/10 hover:border-[#7F5CFF]/50 transition-all duration-300 group">
+                    <motion.div
+                      whileHover={{ y: -6, scale: 1.02 }}
+                      transition={{ duration: 0.3 }}
+                      className="glass-panel rounded-3xl p-7 sm:p-8 border border-white/10 hover:border-[#7F5CFF] transition-all duration-300 group hover:shadow-[0_12px_35px_rgba(127,92,255,0.25)] cursor-pointer"
+                    >
                       
                       <div className="flex items-center justify-between gap-2 mb-3">
                         <span className="text-xs font-mono font-bold text-[#FF5500]">
@@ -104,7 +108,7 @@ export default function JourneySection() {
                         {item.description}
                       </p>
 
-                    </div>
+                    </motion.div>
                   </div>
 
                 </motion.div>

@@ -84,7 +84,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" ref={sectionRef} className="py-24 relative overflow-hidden z-10">
+    <section id="contact" ref={sectionRef} className="py-16 relative overflow-hidden z-10">
       {/* Shooting Star Canvas */}
       <canvas
         ref={shootingStarCanvasRef}
@@ -93,38 +93,38 @@ export default function ContactSection() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.96 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
           className="rounded-3xl bg-[#12121C]/90 border border-[#FF5500]/30 backdrop-blur-2xl p-8 sm:p-14 text-center space-y-8 shadow-[0_0_60px_rgba(255,85,0,0.15)] max-w-4xl mx-auto"
         >
           {/* Tag */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0A0A12] border border-[#FF5500]/40">
-            <Flame className="w-3.5 h-3.5 text-[#FF5500]" />
-            <span className="text-xs font-mono uppercase tracking-widest text-[#9A9AB0]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0A0A12] border border-[#FF5500]/40">
+            <Flame className="w-4 h-4 text-[#FF5500]" />
+            <span className="text-xs font-mono uppercase tracking-widest text-[#F5F5FA] font-bold">
               GET IN TOUCH WITH AMIT
             </span>
           </div>
 
           {/* Heading */}
           <div className="space-y-3">
-            <h2 className="text-4xl sm:text-6xl font-extrabold font-display text-[#F5F5FA] tracking-tight">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-display text-[#F5F5FA] tracking-tight">
               Let&apos;s Build Something{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5500] via-[#7F5CFF] to-[#4CE0FF]">
                 Extraordinary
               </span>
             </h2>
-            <p className="text-[#9A9AB0] text-base sm:text-lg max-w-xl mx-auto font-body">
+            <p className="text-[#9A9AB0] text-sm sm:text-base max-w-xl mx-auto font-body">
               Looking for a dedicated software developer, project collaborator, or engineering role? Reach out to me directly!
             </p>
           </div>
 
           {/* Glowing CTA Button & Contact Cards */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <a
               href={`mailto:${email}`}
-              className="group flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#FF5500] to-[#7F5CFF] text-[#F5F5FA] font-bold text-base shadow-[0_0_35px_rgba(255,85,0,0.6)] hover:shadow-[0_0_45px_rgba(255,85,0,0.9)] active:scale-95 transition-all duration-300 cursor-pointer"
+              className="group flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#FF5500] to-[#7F5CFF] text-[#F5F5FA] font-extrabold text-base shadow-[0_0_35px_rgba(255,85,0,0.6)] hover:shadow-[0_0_45px_rgba(255,85,0,0.9)] active:scale-95 transition-all duration-300 cursor-pointer"
             >
               <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               <span>Send Direct Email</span>
@@ -146,19 +146,19 @@ export default function ContactSection() {
           </div>
 
           {/* Direct Phone & Address Info */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto pt-4 text-xs font-mono text-[#9A9AB0]">
-            <div className="p-3.5 rounded-2xl bg-[#0A0A12]/80 border border-[#7F5CFF]/20 flex items-center justify-center gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto pt-2 text-xs font-mono text-[#9A9AB0]">
+            <div className="p-3.5 rounded-2xl bg-[#0A0A12]/80 border border-[#7F5CFF]/20 flex items-center justify-center gap-2 hover:border-[#FF5500]/40 transition-colors">
               <span className="text-[#FF5500] font-bold">Phone:</span>
               <a href={`tel:${phone}`} className="hover:text-[#F5F5FA] transition-colors">{phone}</a>
             </div>
-            <div className="p-3.5 rounded-2xl bg-[#0A0A12]/80 border border-[#7F5CFF]/20 flex items-center justify-center gap-2">
+            <div className="p-3.5 rounded-2xl bg-[#0A0A12]/80 border border-[#7F5CFF]/20 flex items-center justify-center gap-2 hover:border-[#4CE0FF]/40 transition-colors">
               <span className="text-[#4CE0FF] font-bold">Personal Email:</span>
               <a href={`mailto:${personalEmail}`} className="hover:text-[#F5F5FA] transition-colors">{personalEmail}</a>
             </div>
           </div>
 
           {/* Social Links Grid */}
-          <div className="pt-8 border-t border-[#7F5CFF]/15 flex flex-wrap items-center justify-center gap-6">
+          <div className="pt-6 border-t border-[#7F5CFF]/15 flex flex-wrap items-center justify-center gap-6">
             <a
               href="https://github.com/ThakurAmit07"
               target="_blank"
