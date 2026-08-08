@@ -13,6 +13,7 @@ interface Certification {
   featured: boolean;
   verifyUrl: string;
   verifyLabel: string;
+  cardLabel: string;
   skills: string[];
   description: string;
   verificationPlatform: string;
@@ -36,6 +37,7 @@ const certs: Certification[] = [
     featured: true,
     verifyUrl: "https://www.credly.com/badges/cb71dfdb-8336-4d1d-aab0-a24949e2ea2d",
     verifyLabel: "Verify Badge Details Page on Credly ↗",
+    cardLabel: "Credly Badge Verified",
     verificationPlatform: "Credly Authenticated Badge",
     description: "Earners of the Azure Fundamentals certification have demonstrated foundational level knowledge of cloud services and how those services are provided with Microsoft Azure.",
     skills: ["Cloud Concepts", "Azure Services", "Azure Workloads", "Security & Privacy", "Azure Pricing & Support"],
@@ -56,7 +58,8 @@ const certs: Certification[] = [
     credentialId: "MS-AISKILLS-2026-AS",
     featured: false,
     verifyUrl: "https://www.credly.com/org/microsoft/badges",
-    verifyLabel: "Verify on Credly Portal ↗",
+    verifyLabel: "Verify Badge Details Page on Credly ↗",
+    cardLabel: "Microsoft Verified",
     verificationPlatform: "Credly / Microsoft Official Badge",
     description: "Official Microsoft recognition badge for completing hands-on AI Skills Fest workshops, generative AI model deployment, and cloud AI architecture labs.",
     skills: ["Generative AI Labs", "Azure AI Services", "Prompt Engineering", "Cloud AI Pipelines"],
@@ -78,6 +81,7 @@ const certs: Certification[] = [
     featured: false,
     verifyUrl: "https://www.linkedin.com/in/amit-singh-435b46380/details/certifications/",
     verifyLabel: "Check Out LinkedIn Certification ↗",
+    cardLabel: "CodeWithHarry Verified",
     verificationPlatform: "LinkedIn Verified Certification",
     description: "Comprehensive Web Development Masterclass certification covering full-stack frontend engineering, modern JavaScript ES6+, DOM manipulation, and React.js app architecture.",
     skills: ["HTML5", "CSS3", "JavaScript ES6+", "React.js", "DOM Manipulation"],
@@ -99,6 +103,7 @@ const certs: Certification[] = [
     featured: false,
     verifyUrl: "https://www.linkedin.com/in/amit-singh-435b46380/details/certifications/",
     verifyLabel: "Check Out LinkedIn Certification ↗",
+    cardLabel: "CodeWithHarry Verified",
     verificationPlatform: "LinkedIn Verified Certification",
     description: "Advanced Python Programming, Object-Oriented Software Design, Data Science pipelines, and Pandas numerical data processing certification.",
     skills: ["Python 3", "OOPs Concepts", "Data Science", "Pandas", "Matplotlib"],
@@ -120,6 +125,7 @@ const certs: Certification[] = [
     featured: false,
     verifyUrl: "https://www.linkedin.com/in/amit-singh-435b46380/details/certifications/",
     verifyLabel: "Check Out LinkedIn Certification ↗",
+    cardLabel: "TCS iON Verified",
     verificationPlatform: "LinkedIn Verified Certification",
     description: "Industry awareness credential on Artificial Intelligence security threats, data privacy compliance, and cybersecurity defense principles.",
     skills: ["AI Security Principles", "Cyber Threat Mitigation", "Data Privacy"],
@@ -141,6 +147,7 @@ const certs: Certification[] = [
     featured: false,
     verifyUrl: "https://www.linkedin.com/in/amit-singh-435b46380/details/certifications/",
     verifyLabel: "Check Out LinkedIn Certification ↗",
+    cardLabel: "TCS iON Verified",
     verificationPlatform: "LinkedIn Verified Certification",
     description: "Foundational training in Generative Artificial Intelligence, Prompt Engineering strategies, and Large Language Model applications.",
     skills: ["Prompt Engineering", "Large Language Models", "Generative Architectures"],
@@ -162,6 +169,7 @@ const certs: Certification[] = [
     featured: false,
     verifyUrl: "https://www.linkedin.com/in/amit-singh-435b46380/details/certifications/",
     verifyLabel: "Check Out LinkedIn Certification ↗",
+    cardLabel: "Protege Verified",
     verificationPlatform: "LinkedIn Verified Certification",
     description: "Hackathon achievement recognition for competitive software engineering, rapid web prototyping, and problem-solving under tight time constraints.",
     skills: ["Hackathon Coding", "Rapid Prototyping", "Problem Solving"],
@@ -196,7 +204,7 @@ export default function CertificationsSection() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#12121C] border border-[#7F5CFF]/40 text-[#4CE0FF] text-xs sm:text-sm font-mono mb-3 shadow-[0_0_15px_rgba(127,92,255,0.2)] font-bold">
             <Award className="w-4 h-4 text-[#FF5500]" />
-            <span className="uppercase tracking-widest">CREDLY AUTHENTICATED & VERIFIED BADGES</span>
+            <span className="uppercase tracking-widest">VERIFIED INDUSTRY CREDENTIALS</span>
           </div>
 
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white">
@@ -326,11 +334,12 @@ export default function CertificationsSection() {
                 </div>
               </div>
 
+              {/* Outside Card Trigger: Displays Original Issuer Verification Label */}
               <div className="mt-6 pt-5 border-t border-white/15 flex items-center justify-between">
                 <span className="text-xs font-mono text-zinc-400 font-bold">ID: {cert.credentialId.substring(0, 10)}...</span>
 
                 <span className={`text-xs font-mono font-black ${cert.theme.accent} flex items-center gap-1.5 group-hover:scale-105 transition-transform bg-black/60 px-3 py-1.5 rounded-xl border border-white/10`}>
-                  <span>LinkedIn Verify</span>
+                  <span>{cert.cardLabel}</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </span>
               </div>
@@ -423,6 +432,7 @@ export default function CertificationsSection() {
                 </div>
               </div>
 
+              {/* Inside Modal Action Button: Links to LinkedIn Verification */}
               <div className="pt-6 border-t border-white/15 flex flex-wrap items-center justify-between gap-4">
                 <a
                   href={activeCert.verifyUrl}
