@@ -59,12 +59,14 @@ TECHNICAL SKILLS
 - Cloud & Tools: Microsoft Azure Fundamentals, Git, GitHub
 
 ============================================================
-CERTIFICATIONS
+CERTIFICATIONS (6 Verified Badges)
 ============================================================
 - Microsoft Certified: Azure Fundamentals (May 2026)
 - AI and Cybersecurity Awareness (TCS iON, April 2026)
 - Generative AI Essentials (TCS iON, May 2026)
 - Protex: Hack-2-Win (Protege, April 2026)
+- CodeWithHarry Web Development Masterclass (2025)
+- CodeWithHarry Python & Data Science Masterclass (2025)
 `;
 
     const blob = new Blob([resumeText], { type: "text/plain;charset=utf-8" });
@@ -226,6 +228,14 @@ CERTIFICATIONS
                   <li className="flex items-center gap-2 bg-white/5 p-2.5 rounded-lg border border-white/5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#7F5CFF]" />
                     <span>Protex: Hack-2-Win (Apr 2026)</span>
+                  </li>
+                  <li className="flex items-center gap-2 bg-white/5 p-2.5 rounded-lg border border-white/5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#7F5CFF]" />
+                    <span>CodeWithHarry Web Dev Masterclass (2025)</span>
+                  </li>
+                  <li className="flex items-center gap-2 bg-white/5 p-2.5 rounded-lg border border-white/5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#7F5CFF]" />
+                    <span>CodeWithHarry Python & Data Science (2025)</span>
                   </li>
                 </ul>
               </div>

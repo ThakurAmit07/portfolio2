@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Space_Grotesk, Inter, Caveat, Dancing_Script } from "next/font/google";
 import "./globals.css";
 
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
@@ -20,6 +20,20 @@ const inter = Inter({
   display: "swap",
 });
 
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-caveat",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const dancingScript = Dancing_Script({
+  subsets: ["latin"],
+  variable: "--font-dancing",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Amit Singh — Software Developer | AI & ML",
   description: "Personal portfolio of Amit Singh — Aspiring Software Developer & AI/ML Enthusiast showcasing full-stack projects, AI integration, and core capabilities.",
@@ -33,7 +47,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${inter.variable} h-full antialiased dark`}
+      className={`${spaceGrotesk.variable} ${inter.variable} ${caveat.variable} ${dancingScript.variable} h-full antialiased dark`}
     >
       <body className="min-h-full flex flex-col bg-[#0A0A12] text-[#F5F5FA] font-body selection:bg-[#FF5500]/30 selection:text-[#4CE0FF] relative overflow-x-hidden">
         

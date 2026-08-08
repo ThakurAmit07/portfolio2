@@ -128,12 +128,12 @@ export default function ExperienceSection() {
         </motion.div>
 
         {/* Certifications Highlights Row */}
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <h3 className="text-lg font-bold font-display text-[#F5F5FA] mb-4 flex items-center gap-2">
             <Sparkles className="w-4 h-4 text-[#FF5500]" />
             <span>Official Industry Certifications</span>
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {certificationsData.map((cert, i) => (
               <motion.div
                 key={i}

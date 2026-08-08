@@ -60,6 +60,9 @@ export default function HeroSection({ onOpenResumeModal }: HeroSectionProps) {
           <motion.div variants={itemVariants} className="space-y-3">
             {/* Big Prominent Name */}
             <h1 className="text-5xl sm:text-7xl md:text-8xl font-black font-display tracking-tight text-[#F5F5FA] leading-[1.05]">
+              <span className="font-handwriting font-semibold text-3xl sm:text-5xl lg:text-6xl text-[#4CE0FF] mr-2 inline-block align-baseline glow-text-cyan tracking-normal font-normal">
+                Hello, I&apos;m
+              </span>
               Amit <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5500] via-[#7F5CFF] to-[#4CE0FF] glow-text-magma">Singh</span>
             </h1>
 

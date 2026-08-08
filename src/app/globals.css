@@ -30,6 +30,10 @@
   font-family: var(--font-inter), sans-serif;
 }
 
+.font-handwriting {
+  font-family: var(--font-dancing), var(--font-caveat), cursive, sans-serif;
+}
+
 /* Original Volcanic Glassmorphism & Card Utilities */
 .glass-panel {
   background: rgba(18, 18, 28, 0.65);

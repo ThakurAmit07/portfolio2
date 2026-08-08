@@ -6,10 +6,10 @@ import OrbitingTechSphere from "../canvas/OrbitingTechSphere";
 
 export default function AboutSection() {
   const stats = [
-    { label: "B.Tech CSE (AI & ML)", value: "GLA University", sub: "Education", icon: <Award className="w-5 h-5 text-[#FF5500]" /> },
-    { label: "Engineering Capabilities", value: "8+ Core Skills", sub: "Technical Stack", icon: <Cpu className="w-5 h-5 text-[#7F5CFF]" /> },
-    { label: "Industry Credentials", value: "4 Certifications", sub: "Verified", icon: <Sparkles className="w-5 h-5 text-[#4CE0FF]" /> },
-    { label: "Production Web App", value: "EduLeap+", sub: "Full-Stack System", icon: <Code className="w-5 h-5 text-[#FF5500]" /> },
+    { label: "Cloud & Security", value: "Azure Certified", sub: "Microsoft Verified", icon: <Award className="w-5 h-5 text-[#FF5500]" /> },
+    { label: "Core Specialization", value: "AI & Full-Stack", sub: "GLA University CSE", icon: <Cpu className="w-5 h-5 text-[#7F5CFF]" /> },
+    { label: "Industry Credentials", value: "6 Certifications", sub: "Credly & LinkedIn", icon: <Sparkles className="w-5 h-5 text-[#4CE0FF]" /> },
+    { label: "Featured Systems", value: "EduLeap+ & Aura", sub: "Production Web Apps", icon: <Code className="w-5 h-5 text-[#FF5500]" /> },
   ];
 
   return (
@@ -42,7 +42,7 @@ export default function AboutSection() {
 
             <div className="space-y-4 text-zinc-200 leading-relaxed text-base sm:text-lg font-body">
               <p>
-                I am <strong className="text-white font-bold">Amit Singh</strong>, a Software Developer & Full-Stack Engineer currently pursuing B.Tech in CSE (AI & ML) at <strong className="text-white font-bold">GLA University</strong>.
+                <strong className="text-white font-bold font-display text-lg sm:text-xl">I am Amit Singh</strong>, a Software Developer & Full-Stack Engineer currently pursuing B.Tech in CSE (AI & ML) at <strong className="text-white font-bold">GLA University</strong>.
               </p>
               <p className="text-zinc-300">
                 Passionate about building scalable, user-focused solutions and contributing engineering creativity. My technical foundation spans full-stack web development (React.js, Flask, RESTful APIs, PostgreSQL), cloud architectures (Microsoft Azure Certified), and AI data engineering.
