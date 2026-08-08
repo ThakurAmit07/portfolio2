@@ -78,7 +78,7 @@ export default function Navbar({ onOpenResumeModal }: NavbarProps) {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           
-          {/* BRAND LOGO (Image 3 Fix): AS Box height enlarged to perfectly match Amit Singh + AI & ML combined height */}
+          {/* BRAND LOGO: AS Box height perfectly aligned with Amit Singh + AI & ML */}
           <Link href="#" className="flex items-center gap-3.5 group">
             <div className="relative shrink-0">
               <motion.div
@@ -107,7 +107,7 @@ export default function Navbar({ onOpenResumeModal }: NavbarProps) {
             </div>
           </Link>
 
-          {/* EK DAM MAST NAV LINKS CONTAINER (Image 2 Fix): Premium animated glass pill with active tab glow */}
+          {/* Animated Desktop Nav Items Container */}
           <div className="hidden lg:flex items-center gap-1 bg-[#12121C]/90 backdrop-blur-2xl px-4 py-2 rounded-full border border-white/20 shadow-2xl shadow-black/80">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.substring(1);
@@ -134,21 +134,17 @@ export default function Navbar({ onOpenResumeModal }: NavbarProps) {
             })}
           </div>
 
-          {/* SUNDAR ANIMATED MAIL BUTTON (Image 1 Fix): AS circle & Amit text removed, keeps sleek Mail icon + Contact Mail */}
+          {/* TOP RIGHT PURE MAIL SYMBOL LOGO BUTTON (Text Removed, Slightly Larger Icon Button) */}
           <div className="hidden sm:flex items-center gap-3">
             <motion.a
-              whileHover={{ scale: 1.06, y: -2 }}
+              whileHover={{ scale: 1.1, rotate: 6 }}
               whileTap={{ scale: 0.95 }}
               href="mailto:amitsinghthakur0007@gmail.com"
-              className="group flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#12121C] via-[#1A1028] to-[#12121C] border border-[#7F5CFF]/60 hover:border-[#FF5500] shadow-lg shadow-[#7F5CFF]/20 hover:shadow-[#FF5500]/40 transition-all duration-300 cursor-pointer"
-              title="Click to email amitsinghthakur0007@gmail.com"
+              className="group w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-gradient-to-tr from-[#12121C] via-[#1A1028] to-[#12121C] border border-[#7F5CFF]/60 hover:border-[#FF5500] flex items-center justify-center text-[#4CE0FF] hover:text-[#FF5500] shadow-lg shadow-[#7F5CFF]/20 hover:shadow-[#FF5500]/40 transition-all duration-300 cursor-pointer"
+              title="Email Amit Singh (amitsinghthakur0007@gmail.com)"
+              aria-label="Email Amit Singh"
             >
-              <div className="w-8 h-8 rounded-full bg-[#0A0A12] border border-[#4CE0FF]/50 flex items-center justify-center text-[#4CE0FF] group-hover:text-[#FF5500] group-hover:border-[#FF5500] transition-colors shadow-sm">
-                <Mail className="w-4 h-4" />
-              </div>
-              <span className="text-xs sm:text-sm font-extrabold text-white font-mono group-hover:text-[#4CE0FF] transition-colors tracking-wide">
-                Contact Mail
-              </span>
+              <Mail className="w-5 h-5 sm:w-6 sm:h-6 transition-colors" />
             </motion.a>
           </div>
 
@@ -190,8 +186,8 @@ export default function Navbar({ onOpenResumeModal }: NavbarProps) {
                   href="mailto:amitsinghthakur0007@gmail.com"
                   className="w-full py-3 text-sm font-extrabold text-center text-[#4CE0FF] bg-[#12121C] border border-[#4CE0FF]/50 rounded-xl flex items-center justify-center gap-2"
                 >
-                  <Mail className="w-4 h-4 text-[#4CE0FF]" />
-                  <span>Contact Mail</span>
+                  <Mail className="w-5 h-5 text-[#4CE0FF]" />
+                  <span>Email amitsinghthakur0007@gmail.com</span>
                 </a>
 
                 {onOpenResumeModal && (
