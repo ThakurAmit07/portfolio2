@@ -16,6 +16,12 @@ interface Project {
   description: string;
   tags: string[];
   features?: string[];
+  theme: {
+    border: string;
+    glow: string;
+    badgeBg: string;
+    badgeText: string;
+  };
 }
 
 const projects: Project[] = [
@@ -30,6 +36,12 @@ const projects: Project[] = [
     description:
       "An interactive business intelligence dashboard designed to visualize sales performance, customer activity and revenue insights through a live data-driven interface.",
     tags: ["React.js", "Supabase", "TypeScript", "Tailwind CSS", "Recharts", "AI Assistant"],
+    theme: {
+      border: "border-[#FF5500]/50 hover:border-[#FF5500]",
+      glow: "hover:shadow-[0_0_50px_rgba(255,85,0,0.3)]",
+      badgeBg: "bg-[#FF5500]/20 border-[#FF5500]/40",
+      badgeText: "text-[#FF5500]",
+    },
     features: [
       "Supabase live synchronization",
       "Revenue tracking & today's performance",
@@ -49,7 +61,13 @@ const projects: Project[] = [
     githubUrl: "https://github.com/ThakurAmit07",
     description:
       "Educational platform designed to help students access learning materials, track progress and improve their skills through interactive content.",
-    tags: ["HTML5", "CSS3", "JavaScript", "React.js", "Python", "Flask", "PostgreSQL"],
+    tags: ["React.js", "Python", "Flask", "PostgreSQL", "SQLAlchemy"],
+    theme: {
+      border: "border-[#7F5CFF]/50 hover:border-[#7F5CFF]",
+      glow: "hover:shadow-[0_15px_40px_rgba(127,92,255,0.3)]",
+      badgeBg: "bg-[#7F5CFF]/20 border-[#7F5CFF]/40",
+      badgeText: "text-[#B09BFF]",
+    },
     features: [
       "Interactive learning material distribution",
       "Student progress tracking & quiz modules",
@@ -66,7 +84,13 @@ const projects: Project[] = [
     githubUrl: "https://github.com/ThakurAmit07",
     description:
       "Comprehensive Machine Learning & AI project repository containing data pipeline implementations, model training workflows, and predictive analytics scripts.",
-    tags: ["Python", "Machine Learning", "Data Processing", "NumPy", "Pandas", "Scikit-Learn"],
+    tags: ["Python", "Machine Learning", "Scikit-Learn", "Pandas", "NumPy"],
+    theme: {
+      border: "border-[#FF5500]/50 hover:border-[#FF5500]",
+      glow: "hover:shadow-[0_15px_40px_rgba(255,85,0,0.3)]",
+      badgeBg: "bg-[#FF5500]/20 border-[#FF5500]/40",
+      badgeText: "text-[#FF8844]",
+    },
     features: [
       "Supervised & unsupervised learning models",
       "Exploratory Data Analysis (EDA) pipelines",
@@ -81,6 +105,12 @@ const projects: Project[] = [
     githubUrl: "https://github.com/ThakurAmit07",
     description: "Custom web development repository demonstrating modular frontend architecture and modern layout techniques.",
     tags: ["JavaScript", "HTML5", "CSS3", "Git"],
+    theme: {
+      border: "border-[#4CE0FF]/50 hover:border-[#4CE0FF]",
+      glow: "hover:shadow-[0_15px_40px_rgba(76,224,255,0.3)]",
+      badgeBg: "bg-[#4CE0FF]/20 border-[#4CE0FF]/40",
+      badgeText: "text-[#4CE0FF]",
+    },
   },
   {
     id: "expense-tracker",
@@ -90,6 +120,12 @@ const projects: Project[] = [
     githubUrl: "https://github.com/ThakurAmit07",
     description: "Personal finance and daily expense tracking tool with real-time category aggregation and budget summaries.",
     tags: ["JavaScript", "HTML5", "CSS3", "Local Storage"],
+    theme: {
+      border: "border-emerald-500/50 hover:border-emerald-400",
+      glow: "hover:shadow-[0_15px_40px_rgba(16,185,129,0.3)]",
+      badgeBg: "bg-emerald-500/20 border-emerald-500/40",
+      badgeText: "text-emerald-300",
+    },
   },
   {
     id: "todo-list",
@@ -98,7 +134,13 @@ const projects: Project[] = [
     featured: false,
     githubUrl: "https://github.com/ThakurAmit07",
     description: "Interactive task management app with task prioritization, state persistence, and clean UI filtering.",
-    tags: ["JavaScript", "DOM Manipulation", "CSS3"],
+    tags: ["JavaScript", "DOM Logic", "CSS3"],
+    theme: {
+      border: "border-amber-500/50 hover:border-amber-400",
+      glow: "hover:shadow-[0_15px_40px_rgba(245,158,11,0.3)]",
+      badgeBg: "bg-amber-500/20 border-amber-500/40",
+      badgeText: "text-amber-300",
+    },
   },
   {
     id: "password-generator",
@@ -108,6 +150,12 @@ const projects: Project[] = [
     githubUrl: "https://github.com/ThakurAmit07",
     description: "Cryptographically customizable password generator and security logic tool with instant clipboard copy and dynamic question review.",
     tags: ["JavaScript", "Security", "CSS3", "DOM Logic"],
+    theme: {
+      border: "border-purple-500/50 hover:border-purple-400",
+      glow: "hover:shadow-[0_15px_40px_rgba(168,85,247,0.3)]",
+      badgeBg: "bg-purple-500/20 border-purple-500/40",
+      badgeText: "text-purple-300",
+    },
   },
 ];
 
@@ -142,7 +190,7 @@ export default function ProjectsSection() {
           </p>
         </motion.div>
 
-        {/* FEATURED PROJECT SHOWCASE CARD WITH PROMINENT LARGE PREVIEW */}
+        {/* FEATURED PROJECT SHOWCASE CARD */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -267,7 +315,7 @@ export default function ProjectsSection() {
           </div>
         </motion.div>
 
-        {/* EVEN SECONDARY PROJECTS GRID (3x2 Perfect Alignment with Larger Fonts) */}
+        {/* VIBRANT, BEAUTIFULLY COLORED SECONDARY PROJECTS GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {secondaryProjects.map((project, idx) => (
             <motion.div
@@ -277,12 +325,12 @@ export default function ProjectsSection() {
               whileHover={{ y: -8, scale: 1.02 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.08 }}
-              className="glass-panel rounded-3xl p-7 sm:p-8 border border-white/15 hover:border-[#7F5CFF] transition-all duration-300 flex flex-col justify-between group hover:shadow-[0_15px_40px_rgba(127,92,255,0.3)] cursor-pointer h-full"
+              className={`glass-panel rounded-3xl p-7 sm:p-8 border ${project.theme.border} ${project.theme.glow} transition-all duration-300 flex flex-col justify-between group cursor-pointer h-full relative overflow-hidden`}
               onClick={() => setSelectedProject(project)}
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-mono text-[#4CE0FF] font-black uppercase tracking-wider">
+                  <span className={`text-xs font-mono font-black uppercase tracking-wider px-3 py-1 rounded-md ${project.theme.badgeBg} ${project.theme.badgeText}`}>
                     {project.category}
                   </span>
                   {project.date && (
@@ -292,11 +340,11 @@ export default function ProjectsSection() {
                   )}
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-display group-hover:text-[#4CE0FF] transition-colors leading-snug">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-display group-hover:text-white transition-colors leading-snug">
                   {project.title}
                 </h3>
 
-                <p className="text-sm sm:text-base text-zinc-200 leading-relaxed mt-3 line-clamp-3 font-medium font-body">
+                <p className="text-sm sm:text-base text-zinc-200 leading-relaxed mt-3 font-medium font-body">
                   {project.description}
                 </p>
               </div>
@@ -304,14 +352,14 @@ export default function ProjectsSection() {
               <div className="mt-6 pt-5 border-t border-white/15">
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.slice(0, 4).map((t) => (
-                    <span key={t} className="text-xs font-mono font-bold px-3 py-1 rounded-lg bg-white/10 text-white border border-white/20 shadow-sm">
+                    <span key={t} className={`text-xs font-mono font-bold px-3 py-1 rounded-lg ${project.theme.badgeBg} ${project.theme.badgeText} shadow-sm`}>
                       {t}
                     </span>
                   ))}
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-mono text-[#FF5500] group-hover:text-[#FF8844] font-extrabold flex items-center gap-1.5">
+                  <span className="text-sm font-mono text-[#FF5500] group-hover:text-[#FF8844] font-black flex items-center gap-1.5">
                     <span>View Details</span>
                     <span>→</span>
                   </span>
@@ -322,7 +370,7 @@ export default function ProjectsSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="text-zinc-300 hover:text-white p-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/15 transition-colors"
+                      className="text-zinc-200 hover:text-white p-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 transition-colors"
                       aria-label="GitHub Repository"
                     >
                       <GithubIcon className="w-5 h-5" />

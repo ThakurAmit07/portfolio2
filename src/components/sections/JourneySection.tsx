@@ -31,24 +31,6 @@ const milestones = [
     icon: GraduationCap,
     accent: "border-[#4CE0FF]/50 bg-[#12121C] text-[#4CE0FF]",
   },
-  {
-    year: "2025",
-    period: "2025",
-    title: "CBSE Class XII (Senior Secondary)",
-    category: "Academic Milestone",
-    description: "Completed Class XII Senior Secondary examination under Central Board of Secondary Education with 73.20%.",
-    icon: GraduationCap,
-    accent: "border-emerald-500/50 bg-[#12121C] text-emerald-400",
-  },
-  {
-    year: "2023",
-    period: "2023",
-    title: "CBSE Class X (High School)",
-    category: "Academic Milestone",
-    description: "Completed Class X High School examination under Central Board of Secondary Education with 84.80%.",
-    icon: GraduationCap,
-    accent: "border-[#FF5500]/50 bg-[#12121C] text-[#FF5500]",
-  },
 ];
 
 export default function JourneySection() {

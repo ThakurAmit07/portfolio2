@@ -8,7 +8,7 @@ export default function AboutSection() {
   const stats = [
     { label: "B.Tech CSE", value: "GLA Univ", sub: "Education", icon: <Award className="w-5 h-5 text-[#FF5500]" /> },
     { label: "Technical", value: "8+ Domains", sub: "Core Skills", icon: <Cpu className="w-5 h-5 text-[#7F5CFF]" /> },
-    { label: "Verified", value: "4 Credentials", sub: "Certifications", icon: <Sparkles className="w-5 h-5 text-[#4CE0FF]" /> },
+    { label: "Verified", value: "4 Certs", sub: "Certifications", icon: <Sparkles className="w-5 h-5 text-[#4CE0FF]" /> },
     { label: "Live System", value: "EduLeap", sub: "Full-Stack App", icon: <Code className="w-5 h-5 text-[#FF5500]" /> },
   ];
 
@@ -49,8 +49,8 @@ export default function AboutSection() {
               </p>
             </div>
 
-            {/* Non-Overlapping, Cleanly Sized Metrics Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 pt-3">
+            {/* 100% Fully Visible Text Metrics Grid (No Ellipsis/Truncation) */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-3">
               {stats.map((stat, idx) => (
                 <motion.div
                   key={idx}
@@ -59,16 +59,16 @@ export default function AboutSection() {
                   whileHover={{ y: -6, scale: 1.03 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.08, duration: 0.4 }}
-                  className="p-4 rounded-2xl bg-[#12121C]/90 border border-[#7F5CFF]/35 backdrop-blur-md hover:border-[#FF5500] hover:shadow-[0_10px_25px_rgba(255,85,0,0.3)] transition-all group cursor-pointer flex flex-col justify-between overflow-hidden"
+                  className="p-3.5 sm:p-4 rounded-2xl bg-[#12121C]/95 border border-[#7F5CFF]/40 backdrop-blur-md hover:border-[#FF5500] hover:shadow-[0_10px_25px_rgba(255,85,0,0.3)] transition-all group cursor-pointer flex flex-col justify-between"
                 >
                   <div className="flex items-center justify-between mb-2">
                     <div className="group-hover:scale-110 transition-transform">{stat.icon}</div>
-                    <span className="text-[10px] font-mono font-bold text-[#FF5500] uppercase tracking-wider">STATS</span>
+                    <span className="text-[10px] font-mono font-extrabold text-[#FF5500] uppercase tracking-wider">STATS</span>
                   </div>
-                  <div className="text-lg sm:text-xl font-black font-display text-white group-hover:text-[#4CE0FF] transition-colors mt-1 truncate">
+                  <div className="text-base sm:text-lg font-black font-display text-white group-hover:text-[#4CE0FF] transition-colors mt-1 whitespace-nowrap">
                     {stat.value}
                   </div>
-                  <div className="text-xs text-zinc-300 mt-1 font-bold font-body truncate">
+                  <div className="text-xs text-zinc-300 mt-1 font-bold font-body whitespace-nowrap">
                     {stat.label}
                   </div>
                 </motion.div>
