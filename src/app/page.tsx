@@ -1,34 +1,40 @@
 "use client";
 
-import LoadingScreen from "@/components/ui/LoadingScreen";
+import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
-import SkillsSection from "@/components/sections/SkillsSection";
+import AcademicSection from "@/components/sections/AcademicSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
-import ExperienceSection from "@/components/sections/ExperienceSection";
+import SkillsSection from "@/components/sections/SkillsSection";
+import CertificationsSection from "@/components/sections/CertificationsSection";
+import JourneySection from "@/components/sections/JourneySection";
 import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/layout/Footer";
+import ResumeModal from "@/components/ui/ResumeModal";
 
 export default function Home() {
+  const [resumeModalOpen, setResumeModalOpen] = useState(false);
+
+  const handleOpenResume = () => setResumeModalOpen(true);
+  const handleCloseResume = () => setResumeModalOpen(false);
+
   return (
     <main className="flex-1 relative">
-      {/* Intro Loading Screen */}
-      <LoadingScreen />
+      <Navbar onOpenResumeModal={handleOpenResume} />
 
-      {/* Fixed Navigation Header */}
-      <Navbar />
-
-      {/* Main Sections (In exact required order) */}
-      <HeroSection />
+      <HeroSection onOpenResumeModal={handleOpenResume} />
       <AboutSection />
-      <SkillsSection />
+      <AcademicSection />
       <ProjectsSection />
-      <ExperienceSection />
+      <SkillsSection />
+      <CertificationsSection />
+      <JourneySection />
       <ContactSection />
 
-      {/* Footer */}
       <Footer />
+
+      <ResumeModal isOpen={resumeModalOpen} onClose={handleCloseResume} />
     </main>
   );
 }

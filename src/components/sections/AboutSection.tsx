@@ -42,7 +42,7 @@ export default function AboutSection() {
 
             <div className="space-y-4 text-[#9A9AB0] leading-relaxed text-base sm:text-lg font-body">
               <p>
-                I am <strong className="text-[#F5F5FA]">Amit Singh</strong>, an aspiring Software Developer currently pursuing my graduation at <strong className="text-[#F5F5FA]">GLA University</strong>.
+                I am <strong className="text-[#F5F5FA]">Amit Singh</strong>, a Software Developer & Full-Stack Engineer currently pursuing my graduation at <strong className="text-[#F5F5FA]">GLA University</strong>.
               </p>
               <p>
                 Passionate about building scalable, user-focused solutions and contributing creativity to dynamic organizations. My technical foundation spans full-stack web development (React.js, Flask, RESTful APIs, PostgreSQL), cloud fundamentals (Microsoft Azure Certified), and AI engineering.

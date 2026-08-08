@@ -172,6 +172,22 @@ function VolcanicConstellationCore() {
 }
 
 export default function Hero3DCanvas() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <div className="w-full h-full min-h-[400px] flex items-center justify-center">
+        <div className="w-48 h-48 rounded-full border border-[#FF5500]/20 bg-[#FF5500]/5 animate-pulse flex items-center justify-center">
+          <span className="text-xs font-mono text-[#FF5500]">Loading 3D Core...</span>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="w-full h-full min-h-[450px] lg:min-h-[600px] relative pointer-events-auto">
       <Canvas

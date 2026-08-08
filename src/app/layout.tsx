@@ -10,17 +10,19 @@ const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-space-grotesk",
   weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Amit Singh — Senior Developer & Spatial Web Architect",
-  description: "Top 1% developer portfolio featuring photorealistic 3D volcanic cosmic graphics, WebGL spatial architecture, and Next.js performance.",
+  title: "Amit Singh — Software Developer | AI & ML",
+  description: "Personal portfolio of Amit Singh — Aspiring Software Developer & AI/ML Enthusiast showcasing full-stack projects, AI integration, and core capabilities.",
 };
 
 export default function RootLayout({
@@ -64,7 +66,7 @@ export default function RootLayout({
         {/* Custom Glowing Cursor */}
         <CustomCursor />
 
-        {/* Lenis Inertia Smooth Scroll Container */}
+        {/* Smooth Scroll Provider */}
         <SmoothScrollProvider>
           {children}
         </SmoothScrollProvider>

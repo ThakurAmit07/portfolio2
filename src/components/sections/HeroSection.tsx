@@ -1,11 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles, Flame, Rocket } from "lucide-react";
-import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { Flame, Rocket, FileText } from "lucide-react";
 import Hero3DCanvas from "../canvas/Hero3DCanvas";
+import { GithubIcon, LinkedInIcon, XIcon } from "../ui/SocialIcons";
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  onOpenResumeModal?: () => void;
+}
+
+export default function HeroSection({ onOpenResumeModal }: HeroSectionProps) {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -28,7 +32,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
-      {/* 3D Particle Constellation Background / Side Canvas */}
+      {/* 3D Volcanic Constellation Core Background */}
       <div className="absolute inset-0 z-0 flex items-center justify-center opacity-90 pointer-events-none">
         <Hero3DCanvas />
       </div>
@@ -39,80 +43,89 @@ export default function HeroSection() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="lg:col-span-8 space-y-6 text-center lg:text-left"
+          className="lg:col-span-9 space-y-6 text-center lg:text-left"
         >
           {/* Status Badge */}
-          <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#12121C]/90 border border-[#FF5500]/40 backdrop-blur-md shadow-[0_0_15px_rgba(255,85,0,0.2)]">
-            <span className="relative flex h-2 w-2">
+          <motion.div variants={itemVariants} className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#12121C]/90 border border-[#FF5500]/40 backdrop-blur-md shadow-[0_0_20px_rgba(255,85,0,0.25)]">
+            <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF5500] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF5500]"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#FF5500]"></span>
             </span>
-            <span className="text-xs font-semibold tracking-wide text-[#F5F5FA] font-mono">
-              AVAILABLE FOR NEW OPPORTUNITIES
+            <span className="text-xs sm:text-sm font-bold tracking-wider text-[#F5F5FA] font-mono uppercase">
+              SOFTWARE DEVELOPER • AI & ML
             </span>
           </motion.div>
 
-          {/* Confident Hero Headings for Amit Singh */}
-          <motion.div variants={itemVariants} className="space-y-2">
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold font-display tracking-tight text-[#F5F5FA] leading-[1.08]">
-              Building Scalable & User-Focused{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5500] via-[#7F5CFF] to-[#4CE0FF] glow-text-magma">
-                Software Solutions
-              </span>
+          {/* PROMINENT LARGE NAME & HEADLINE */}
+          <motion.div variants={itemVariants} className="space-y-3">
+            {/* Big Prominent Name */}
+            <h1 className="text-5xl sm:text-7xl md:text-8xl font-black font-display tracking-tight text-[#F5F5FA] leading-[1.05]">
+              Amit <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5500] via-[#7F5CFF] to-[#4CE0FF] glow-text-magma">Singh</span>
             </h1>
-            <p className="text-2xl sm:text-3xl font-semibold text-[#9A9AB0] font-display">
-              Hi, I&apos;m <span className="text-[#F5F5FA] underline decoration-[#FF5500]/70 decoration-2 underline-offset-8">Amit Singh</span>
+
+            {/* Confident Subheadline */}
+            <p className="text-2xl sm:text-4xl font-extrabold text-[#F5F5FA] font-display pt-1">
+              Software Developer & Full-Stack Engineer
             </p>
           </motion.div>
 
-          {/* Tagline */}
+          {/* Description */}
           <motion.p
             variants={itemVariants}
-            className="text-base sm:text-lg text-[#9A9AB0] max-w-2xl leading-relaxed mx-auto lg:mx-0 font-body"
+            className="text-lg sm:text-xl text-[#9A9AB0] max-w-3xl leading-relaxed mx-auto lg:mx-0 font-body"
           >
-            Aspiring Software Developer & Full-Stack Engineer. Passionate about building modern Web Applications, RESTful APIs, Flask backends, and Azure Cloud Solutions.
+            Building modern Web Applications, RESTful APIs, Flask backends, AI Integration, and Azure Cloud Solutions with precision.
           </motion.p>
 
           {/* Action CTAs */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2"
+            className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4"
           >
             <a
               href="#projects"
-              className="group flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#FF5500] to-[#7F5CFF] text-[#F5F5FA] font-bold text-sm shadow-[0_0_30px_rgba(255,85,0,0.5)] hover:shadow-[0_0_40px_rgba(255,85,0,0.8)] active:scale-95 transition-all duration-300 cursor-pointer"
+              className="group flex items-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-[#FF5500] to-[#7F5CFF] text-[#F5F5FA] font-extrabold text-base shadow-[0_0_35px_rgba(255,85,0,0.5)] hover:shadow-[0_0_45px_rgba(255,85,0,0.8)] active:scale-95 transition-all duration-300 cursor-pointer"
             >
-              <Rocket className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              <span>Explore My Work</span>
+              <Rocket className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <span>Explore Projects</span>
             </a>
 
-            <a
-              href="#contact"
-              className="flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#12121C] border border-[#7F5CFF]/40 text-[#F5F5FA] font-medium text-sm hover:border-[#FF5500] hover:bg-[#FF5500]/10 active:scale-95 transition-all duration-300 cursor-pointer"
+            <button
+              onClick={onOpenResumeModal}
+              className="flex items-center gap-2 px-7 py-4 rounded-full bg-[#12121C] border border-[#7F5CFF]/40 text-[#F5F5FA] font-semibold text-base hover:border-[#FF5500] hover:bg-[#FF5500]/10 active:scale-95 transition-all duration-300 cursor-pointer"
             >
-              <Flame className="w-4 h-4 text-[#FF5500]" />
-              <span>Get In Touch</span>
-            </a>
+              <FileText className="w-5 h-5 text-[#4CE0FF]" />
+              <span>Resume</span>
+            </button>
 
-            {/* Social Icons including Amit's LinkedIn */}
-            <div className="flex items-center gap-2 pl-2 border-l border-[#7F5CFF]/20">
+            {/* Social Icons */}
+            <div className="flex items-center gap-3 pl-3 border-l border-[#7F5CFF]/30">
               <a
-                href="https://github.com"
+                href="https://github.com/ThakurAmit07"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-full bg-[#12121C] border border-[#7F5CFF]/20 flex items-center justify-center text-[#9A9AB0] hover:text-[#F5F5FA] hover:border-[#7F5CFF] hover:shadow-[0_0_15px_rgba(127,92,255,0.4)] transition-all"
+                className="w-11 h-11 rounded-full bg-[#12121C] border border-[#7F5CFF]/30 flex items-center justify-center text-[#9A9AB0] hover:text-[#F5F5FA] hover:border-[#7F5CFF] hover:shadow-[0_0_18px_rgba(127,92,255,0.5)] transition-all"
                 aria-label="GitHub"
               >
-                <FaGithub className="w-4 h-4" />
+                <GithubIcon className="w-5 h-5" />
               </a>
               <a
                 href="https://www.linkedin.com/in/amit-singh-435b46380"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-full bg-[#12121C] border border-[#7F5CFF]/20 flex items-center justify-center text-[#9A9AB0] hover:text-[#4CE0FF] hover:border-[#4CE0FF] hover:shadow-[0_0_15px_rgba(76,224,255,0.5)] transition-all"
+                className="w-11 h-11 rounded-full bg-[#12121C] border border-[#7F5CFF]/30 flex items-center justify-center text-[#9A9AB0] hover:text-[#4CE0FF] hover:border-[#4CE0FF] hover:shadow-[0_0_18px_rgba(76,224,255,0.6)] transition-all"
                 aria-label="LinkedIn Profile"
               >
-                <FaLinkedin className="w-4 h-4" />
+                <LinkedInIcon className="w-5 h-5" />
+              </a>
+              <a
+                href="https://x.com/Thakur_Amit07"
+                target="_blank"
+                rel="noreferrer"
+                className="w-11 h-11 rounded-full bg-[#12121C] border border-[#7F5CFF]/30 flex items-center justify-center text-[#9A9AB0] hover:text-[#FF5500] hover:border-[#FF5500] hover:shadow-[0_0_18px_rgba(255,85,0,0.6)] transition-all"
+                aria-label="X Profile"
+              >
+                <XIcon className="w-5 h-5" />
               </a>
             </div>
           </motion.div>

@@ -17,6 +17,8 @@
   body {
     background-color: transparent;
     color: #F5F5FA;
+    min-height: 100vh;
+    overflow-x: hidden;
   }
 }
 
@@ -28,7 +30,7 @@
   font-family: var(--font-inter), sans-serif;
 }
 
-/* Glassmorphism Utilities with glowing volcanic backdrop */
+/* Original Volcanic Glassmorphism & Card Utilities */
 .glass-panel {
   background: rgba(18, 18, 28, 0.65);
   backdrop-filter: blur(20px);
@@ -45,6 +47,18 @@
   box-shadow: 0 10px 40px 0 rgba(255, 85, 0, 0.15);
 }
 
+.glass-panel-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(26, 20, 42, 0.8);
+  border-color: rgba(255, 85, 0, 0.5);
+  box-shadow: 0 15px 45px rgba(255, 85, 0, 0.2);
+  transform: translateY(-4px);
+}
+
+/* Original Glowing Text Styles */
 .glow-text-violet {
   text-shadow: 0 0 25px rgba(127, 92, 255, 0.8);
 }
@@ -61,7 +75,26 @@
   box-shadow: 0 0 25px rgba(255, 85, 0, 0.35), inset 0 0 15px rgba(127, 92, 255, 0.2);
 }
 
-/* Custom Scrollbar */
+/* Gradient Text Utilities */
+.gradient-text-magma {
+  background: linear-gradient(135deg, #FFFFFF 0%, #FF8844 50%, #FF5500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-violet {
+  background: linear-gradient(135deg, #FFFFFF 0%, #B09BFF 50%, #7F5CFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-cyan {
+  background: linear-gradient(135deg, #FFFFFF 0%, #8CEBFF 50%, #4CE0FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Volcanic Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }

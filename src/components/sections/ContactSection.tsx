@@ -2,16 +2,15 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
-import { Sparkles, Mail, Copy, Check, Send, ArrowUpRight, Flame } from "lucide-react";
-import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { Mail, Copy, Check, Send, ArrowUpRight, Flame } from "lucide-react";
 import confetti from "canvas-confetti";
+import { GithubIcon, LinkedInIcon, XIcon } from "../ui/SocialIcons";
 
 export default function ContactSection() {
   const [copied, setCopied] = useState(false);
   const email = "amit.singh_cs.aiml25@gla.ac.in";
   const personalEmail = "amitsinghthakur0007@gmail.com";
   const phone = "+91-9457775243";
-  const address = "Azad Nagar Ajitmal, Auraiya, UP, India - 206121";
 
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: false, amount: 0.3 });
@@ -85,7 +84,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" ref={sectionRef} className="py-24 relative overflow-hidden">
+    <section id="contact" ref={sectionRef} className="py-24 relative overflow-hidden z-10">
       {/* Shooting Star Canvas */}
       <canvas
         ref={shootingStarCanvasRef}
@@ -104,7 +103,7 @@ export default function ContactSection() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0A0A12] border border-[#FF5500]/40">
             <Flame className="w-3.5 h-3.5 text-[#FF5500]" />
             <span className="text-xs font-mono uppercase tracking-widest text-[#9A9AB0]">
-              05. GET IN TOUCH WITH AMIT
+              GET IN TOUCH WITH AMIT
             </span>
           </div>
 
@@ -148,25 +147,25 @@ export default function ContactSection() {
 
           {/* Direct Phone & Address Info */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto pt-4 text-xs font-mono text-[#9A9AB0]">
-            <div className="p-3 rounded-2xl bg-[#0A0A12]/80 border border-[#7F5CFF]/20 flex items-center justify-center gap-2">
+            <div className="p-3.5 rounded-2xl bg-[#0A0A12]/80 border border-[#7F5CFF]/20 flex items-center justify-center gap-2">
               <span className="text-[#FF5500] font-bold">Phone:</span>
               <a href={`tel:${phone}`} className="hover:text-[#F5F5FA] transition-colors">{phone}</a>
             </div>
-            <div className="p-3 rounded-2xl bg-[#0A0A12]/80 border border-[#7F5CFF]/20 flex items-center justify-center gap-2">
+            <div className="p-3.5 rounded-2xl bg-[#0A0A12]/80 border border-[#7F5CFF]/20 flex items-center justify-center gap-2">
               <span className="text-[#4CE0FF] font-bold">Personal Email:</span>
               <a href={`mailto:${personalEmail}`} className="hover:text-[#F5F5FA] transition-colors">{personalEmail}</a>
             </div>
           </div>
 
-          {/* Social Links Grid including Amit's LinkedIn */}
+          {/* Social Links Grid */}
           <div className="pt-8 border-t border-[#7F5CFF]/15 flex flex-wrap items-center justify-center gap-6">
             <a
-              href="https://github.com"
+              href="https://github.com/ThakurAmit07"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-2 text-sm text-[#9A9AB0] hover:text-[#F5F5FA] transition-colors"
             >
-              <FaGithub className="w-4 h-4 text-[#7F5CFF]" />
+              <GithubIcon className="w-4 h-4 text-[#7F5CFF]" />
               <span>GitHub Profile</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
@@ -176,9 +175,19 @@ export default function ContactSection() {
               rel="noreferrer"
               className="flex items-center gap-2 text-sm text-[#F5F5FA] font-medium hover:text-[#4CE0FF] transition-colors"
             >
-              <FaLinkedin className="w-4 h-4 text-[#4CE0FF]" />
-              <span>LinkedIn (amit-singh-435b46380)</span>
+              <LinkedInIcon className="w-4 h-4 text-[#4CE0FF]" />
+              <span>LinkedIn Profile</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-[#4CE0FF]" />
+            </a>
+            <a
+              href="https://x.com/Thakur_Amit07"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 text-sm text-[#9A9AB0] hover:text-[#FF5500] transition-colors"
+            >
+              <XIcon className="w-4 h-4 text-[#FF5500]" />
+              <span>X (Twitter) Profile</span>
+              <ArrowUpRight className="w-3.5 h-3.5 text-[#FF5500]" />
             </a>
           </div>
         </motion.div>

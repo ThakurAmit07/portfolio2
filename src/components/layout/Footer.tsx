@@ -1,6 +1,8 @@
 "use client";
 
-import { ArrowUp, Terminal } from "lucide-react";
+import Link from "next/link";
+import { Terminal, ArrowUp } from "lucide-react";
+import { GithubIcon, LinkedInIcon, XIcon } from "@/components/ui/SocialIcons";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -8,34 +10,74 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-[#FF5500]/15 py-12 relative z-10 bg-[#0A0A12]/80 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+    <footer className="w-full bg-[#0A0A12]/90 border-t border-white/10 pt-16 pb-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Brand */}
-        <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-lg bg-[#12121C] border border-[#FF5500]/40 flex items-center justify-center">
-            <Terminal className="w-4 h-4 text-[#FF5500]" />
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-12 border-b border-white/10">
+          
+          <div className="flex flex-col gap-2 max-w-md">
+            <Link href="#" className="flex items-center gap-2.5 group">
+              <div className="w-8 h-8 rounded-lg bg-[#FF5500]/20 border border-[#FF5500]/30 flex items-center justify-center text-[#FF5500]">
+                <Terminal className="w-4 h-4" />
+              </div>
+              <span className="font-display text-lg font-bold text-white">
+                Amit Singh
+              </span>
+            </Link>
+
+            <p className="text-xs text-zinc-400 font-mono">
+              Software Developer & AI / ML Enthusiast
+            </p>
           </div>
-          <span className="text-sm font-bold font-display text-[#F5F5FA]">
-            AMIT SINGH &copy; {new Date().getFullYear()}
-          </span>
+
+          <div className="flex items-center gap-4">
+            <a
+              href="https://www.linkedin.com/in/amit-singh-435b46380"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-white/5 hover:bg-violet-600/20 border border-white/10 hover:border-violet-400/50 flex items-center justify-center text-zinc-400 hover:text-white transition-all"
+              aria-label="LinkedIn Profile"
+            >
+              <LinkedInIcon className="w-4 h-4" />
+            </a>
+
+            <a
+              href="https://github.com/ThakurAmit07"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-white/5 hover:bg-violet-600/20 border border-white/10 hover:border-violet-400/50 flex items-center justify-center text-zinc-400 hover:text-white transition-all"
+              aria-label="GitHub Repository"
+            >
+              <GithubIcon className="w-4 h-4" />
+            </a>
+
+            <a
+              href="https://x.com/Thakur_Amit07"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-white/5 hover:bg-violet-600/20 border border-white/10 hover:border-violet-400/50 flex items-center justify-center text-zinc-400 hover:text-white transition-all"
+              aria-label="X Profile"
+            >
+              <XIcon className="w-4 h-4" />
+            </a>
+          </div>
+
         </div>
 
-        {/* Tech Stack Signature */}
-        <p className="text-xs text-[#9A9AB0] font-mono text-center">
-          Crafted with Next.js, Three.js, Framer Motion & Volcanic Cosmic Aesthetics
-        </p>
-
-        {/* Back to top */}
-        <button
-          onClick={scrollToTop}
-          className="flex items-center gap-2 text-xs font-mono text-[#9A9AB0] hover:text-[#FF5500] transition-colors group cursor-pointer"
-        >
-          <span>BACK TO TOP</span>
-          <div className="w-8 h-8 rounded-full bg-[#12121C] border border-[#FF5500]/30 flex items-center justify-center group-hover:border-[#FF5500] group-hover:shadow-[0_0_10px_#FF5500] transition-all">
-            <ArrowUp className="w-3.5 h-3.5 text-[#FF5500] group-hover:-translate-y-0.5 transition-transform" />
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
+          <div>
+            © 2026 Amit Singh. All rights reserved.
           </div>
-        </button>
+
+          <button
+            onClick={scrollToTop}
+            className="flex items-center gap-1.5 text-zinc-400 hover:text-white transition-colors"
+          >
+            <span>Back to top</span>
+            <ArrowUp className="w-3.5 h-3.5" />
+          </button>
+        </div>
+
       </div>
     </footer>
   );
