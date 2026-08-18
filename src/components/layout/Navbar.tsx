@@ -17,9 +17,10 @@ const navLinks = [
 
 interface NavbarProps {
   onOpenResumeModal?: () => void;
+  onOpenContactModal?: () => void;
 }
 
-export default function Navbar({ onOpenResumeModal }: NavbarProps) {
+export default function Navbar({ onOpenResumeModal, onOpenContactModal }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -134,18 +135,18 @@ export default function Navbar({ onOpenResumeModal }: NavbarProps) {
             })}
           </div>
 
-          {/* TOP RIGHT PURE MAIL SYMBOL LOGO BUTTON (Text Removed, Slightly Larger Icon Button) */}
+          {/* TOP RIGHT PURE MAIL SYMBOL LOGO BUTTON */}
           <div className="hidden sm:flex items-center gap-3">
-            <motion.a
+            <motion.button
               whileHover={{ scale: 1.1, rotate: 6 }}
               whileTap={{ scale: 0.95 }}
-              href="mailto:amitsinghthakur0007@gmail.com"
+              onClick={onOpenContactModal}
               className="group w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-gradient-to-tr from-[#12121C] via-[#1A1028] to-[#12121C] border border-[#7F5CFF]/60 hover:border-[#FF5500] flex items-center justify-center text-[#4CE0FF] hover:text-[#FF5500] shadow-lg shadow-[#7F5CFF]/20 hover:shadow-[#FF5500]/40 transition-all duration-300 cursor-pointer"
-              title="Email Amit Singh (amitsinghthakur0007@gmail.com)"
-              aria-label="Email Amit Singh"
+              title="Open Contact Form"
+              aria-label="Open Contact Form"
             >
               <Mail className="w-5 h-5 sm:w-6 sm:h-6 transition-colors" />
-            </motion.a>
+            </motion.button>
           </div>
 
           {/* Mobile Menu Toggle Button */}
@@ -182,13 +183,16 @@ export default function Navbar({ onOpenResumeModal }: NavbarProps) {
               ))}
 
               <div className="pt-2 flex flex-col gap-3">
-                <a
-                  href="mailto:amitsinghthakur0007@gmail.com"
-                  className="w-full py-3 text-sm font-extrabold text-center text-[#4CE0FF] bg-[#12121C] border border-[#4CE0FF]/50 rounded-xl flex items-center justify-center gap-2"
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    if (onOpenContactModal) onOpenContactModal();
+                  }}
+                  className="w-full py-3 text-sm font-extrabold text-center text-[#4CE0FF] bg-[#12121C] border border-[#4CE0FF]/50 rounded-xl flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Mail className="w-5 h-5 text-[#4CE0FF]" />
-                  <span>Email amitsinghthakur0007@gmail.com</span>
-                </a>
+                  <span>Get In Touch (Send Email)</span>
+                </button>
 
                 {onOpenResumeModal && (
                   <button

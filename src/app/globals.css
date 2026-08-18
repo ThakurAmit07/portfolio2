@@ -115,3 +115,8 @@
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, rgba(255, 85, 0, 0.9), rgba(127, 92, 255, 0.9));
 }
+
+.stroke-text {
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.25);
+}
+

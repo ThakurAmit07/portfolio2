@@ -12,16 +12,24 @@ import JourneySection from "@/components/sections/JourneySection";
 import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/layout/Footer";
 import ResumeModal from "@/components/ui/ResumeModal";
+import ContactModal from "@/components/ui/ContactModal";
 
 export default function Home() {
   const [resumeModalOpen, setResumeModalOpen] = useState(false);
+  const [contactModalOpen, setContactModalOpen] = useState(false);
 
   const handleOpenResume = () => setResumeModalOpen(true);
   const handleCloseResume = () => setResumeModalOpen(false);
 
+  const handleOpenContact = () => setContactModalOpen(true);
+  const handleCloseContact = () => setContactModalOpen(false);
+
   return (
     <main className="flex-1 relative">
-      <Navbar onOpenResumeModal={handleOpenResume} />
+      <Navbar
+        onOpenResumeModal={handleOpenResume}
+        onOpenContactModal={handleOpenContact}
+      />
 
       <HeroSection onOpenResumeModal={handleOpenResume} />
       <AboutSection />
@@ -35,6 +43,7 @@ export default function Home() {
       <Footer />
 
       <ResumeModal isOpen={resumeModalOpen} onClose={handleCloseResume} />
+      <ContactModal isOpen={contactModalOpen} onClose={handleCloseContact} />
     </main>
   );
 }

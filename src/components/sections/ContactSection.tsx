@@ -123,7 +123,7 @@ export default function ContactSection() {
           {/* Glowing CTA Button & Contact Cards */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <a
-              href={`mailto:${email}`}
+              href={`mailto:${personalEmail}`}
               className="group flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#FF5500] to-[#7F5CFF] text-[#F5F5FA] font-extrabold text-base shadow-[0_0_35px_rgba(255,85,0,0.6)] hover:shadow-[0_0_45px_rgba(255,85,0,0.9)] active:scale-95 transition-all duration-300 cursor-pointer"
             >
               <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -132,11 +132,11 @@ export default function ContactSection() {
 
             {/* Email Copy Widget */}
             <button
-              onClick={() => handleCopy(email)}
+              onClick={() => handleCopy(personalEmail)}
               className="flex items-center gap-2.5 px-6 py-4 rounded-full bg-[#0A0A12] border border-[#7F5CFF]/40 text-[#F5F5FA] text-xs sm:text-sm font-mono hover:border-[#FF5500] hover:bg-[#FF5500]/10 transition-all duration-200 cursor-pointer"
             >
               <Mail className="w-4 h-4 text-[#FF5500]" />
-              <span>{email}</span>
+              <span>{personalEmail}</span>
               {copied ? (
                 <Check className="w-4 h-4 text-[#4CE0FF]" />
               ) : (
@@ -152,8 +152,8 @@ export default function ContactSection() {
               <a href={`tel:${phone}`} className="hover:text-[#F5F5FA] transition-colors">{phone}</a>
             </div>
             <div className="p-3.5 rounded-2xl bg-[#0A0A12]/80 border border-[#7F5CFF]/20 flex items-center justify-center gap-2 hover:border-[#4CE0FF]/40 transition-colors">
-              <span className="text-[#4CE0FF] font-bold">Personal Email:</span>
-              <a href={`mailto:${personalEmail}`} className="hover:text-[#F5F5FA] transition-colors">{personalEmail}</a>
+              <span className="text-[#4CE0FF] font-bold">College Email:</span>
+              <a href={`mailto:${email}`} className="hover:text-[#F5F5FA] transition-colors">{email}</a>
             </div>
           </div>
 
